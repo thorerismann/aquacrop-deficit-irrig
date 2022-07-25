@@ -1,0 +1,539 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction &#8212; Plotting the effects of varying irrigation dates and depths using Aquacrop OSPY</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Methodology" href="methodology.html" />
+    <link rel="prev" title="Abstract" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Plotting the effects of varying irrigation dates and depths using Aquacrop OSPY</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Abstract
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="methodology.html">
+   Methodology
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="results.html">
+   Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="discussion.html">
+   Discussion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="conclusion.html">
+   Conclusion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="annex1.html">
+   Annex 1 Figures
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/thorerismann/aqaucrop-ospy-climate"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/thorerismann/aqaucrop-ospy-climate/issues/new?title=Issue%20on%20page%20%2Fbackground.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/background.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aquacrop">
+   Aquacrop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tunisia-background">
+   Tunisia Background
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deficit-irrigation">
+   Deficit irrigation
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aquacrop">
+   Aquacrop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tunisia-background">
+   Tunisia Background
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deficit-irrigation">
+   Deficit irrigation
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
+<section id="aquacrop">
+<h2>Aquacrop<a class="headerlink" href="#aquacrop" title="Permalink to this headline">#</a></h2>
+<p>Crop growth simulation tools are a valuable part of the toolkits of both farm managers and researchers. The Aquacrop model was developed by the Food and Agricultural Organization (FAO) in 2009 to simulate realistic yields of common crops grown throughout the world. The program was designed to balance the robustness of results with the need to keep both the paramaterization and the required data files simple. This is because the program is aimed mainly at practitioners, such as public and private sector agriculture managers <span id="id1">[<a class="reference internal" href="#id33" title="Pasquale Steduto, Theodore C. Hsiao, Dirk Raes, and Elias Fereres. Aquacrop—the fao crop model to simulate yield response to water: i. concepts and underlying principles. Agronomy Journal, 101(3):426-437, 2009. URL: https://acsess.onlinelibrary.wiley.com/doi/abs/10.2134/agronj2008.0139s, arXiv:https://acsess.onlinelibrary.wiley.com/doi/pdf/10.2134/agronj2008.0139s, doi:https://doi.org/10.2134/agronj2008.0139s.">Steduto <em>et al.</em>, 2009</a>]</span>. Aquacrop comes with an extensive documentation and a number of practical exercises making it an ideal tool as well for students and for practitioners who do not have a programmatic background <span id="id2">[<a class="reference internal" href="#id28" title="FAO. The importance of ukraine and the russian federation for global agricultural markets and the risks associated with the war in ukrainel. https://www.fao.org/3/cb9013en/cb9013en.pdf, 2022. Accessed: 2022-07-25.">FAO, 2022</a>]</span>.</p>
+<p>Aquacrop-OS was developed as open source alternative to Aquacrop to address some of the limitations of the original software and framework. First, as an open source program built in Matlab/Octave, the code is available to anyone and can be run in a number of programming languages and operating systems. Further, since Aquacrop is only available as a compiled program, lack of access to the source code limits the ability of the model to be used in interdisciplinary analysis and to test the influence of the model structures internal to Aquacrop on the results. Testing shows that Aquacrop-OS results are in 99% agreement with Aquacrop results demonstrating the viability of the program to be used interchangeably with Aquacrop <span id="id3">[<a class="reference internal" href="#id34" title="T. Foster, N. Brozović, A.P. Butler, C.M.U. Neale, D. Raes, P. Steduto, E. Fereres, and T.C. Hsiao. Aquacrop-os: an open source version of fao's crop water productivity model. Agricultural Water Management, 181:18-22, 2017. URL: https://www.sciencedirect.com/science/article/pii/S0378377416304589, doi:https://doi.org/10.1016/j.agwat.2016.11.015.">Foster <em>et al.</em>, 2017</a>]</span>. There is extensive documentation for the Aquacrop OS model <span id="id4">[<a class="reference internal" href="#id27" title="T Foster. Aquacrop-os reference manual. https://www.aquacropos.com/uploads/1/0/9/8/109819842/aquacropos_usermanual_v60a.pdf, 2019. Accessed: 2022-07-25.">Foster, 2019</a>]</span> and since publication of Aquacrop-OS there is notably a Python and an R implemention.</p>
+<p>The framework of the Aquacrop-OS model was extended with the publication of the Aquacrop-OSPY module. This Python 3 module implements the Aquacrop-OS framework to allow for the easy use of the many data science extentions available within the Python framework <span id="id5">[<a class="reference internal" href="#id31" title="T.D. Kelly and T. Foster. Aquacrop-ospy: bridging the gap between research and practice in crop-water modeling. Agricultural Water Management, 254:106976, 2021. URL: https://www.sciencedirect.com/science/article/pii/S0378377421002419, doi:https://doi.org/10.1016/j.agwat.2021.106976.">Kelly and Foster, 2021</a>]</span>. While the documentation is not as complete as for Aquacrop and Aquacrop-OS, Aquacrop-OSPY nonetheless has extensive documentation that can allow a new user to jump into using the data package <span id="id6">[<a class="reference internal" href="#id29" title="T Kelly. Aquacrop-ospy. https://aquacropos.github.io/aquacrop/, 2022. Accessed: 2022-07-25.">Kelly, 2022</a>]</span>. one main advantage for using Aquacrop-OSPY is to take advantage of the efficiency of the Python language to generate a large number of runs model runs programmatically and store the outputs in a convenient way.</p>
+</section>
+<section id="tunisia-background">
+<h2>Tunisia Background<a class="headerlink" href="#tunisia-background" title="Permalink to this headline">#</a></h2>
+<p>Assessing deficit irrigation of wheat is a critically important issue right now for Tunisia. Like many countries in the Middle East and North Africa, Tunisia relies on imported wheat as an important staple food for its population {cite} <code class="docutils literal notranslate"><span class="pre">fao1</span></code>. While production has increased steadily since 1960, since the amount of land devoted to wheat cultivation is on a long term decline, the reliance on food imports has also increased over this period as can be seen in Figure 1. <span id="id7">[<a class="reference internal" href="#id25" title="IndexMundi. Tunisa wheat production. https://www.indexmundi.com/agriculture/, 2022. Accessed: 2022-07-23.">IndexMundi, 2022</a>]</span>. Decline in arable land devoted to wheat production has constrained the ability of productivity improvement to meet domestic consumption (Ibid). As of 2021, Tunisian wheat imports stood at 479 million USD, 42% of which came from Ukraine <span id="id8">[<a class="reference internal" href="#id24" title="OEC Organization for Economic Cooperation. Wheat in tunisia. https://oec.world/en/profile/bilateral-product/wheat/reporter/tun#subnational-data, 2022. Accessed: 2022-07-23.">Organization for Economic Cooperation, 2022</a>]</span>, which puts the population in serious risk in light of the recent escalation of the conflict and resulting uncertainty regarding Ukranian grain exports <span id="id9">[<a class="reference internal" href="#id18" title="Editors. Tunisia struggles to grow more wheat as ukraine war bites. africanews, 2022. Accessed: 2022-07-23. doi:https://www.africanews.com/2022/07/05/tunisia-struggles-to-grow-more-wheat-as-ukraine-war-bites/.">Editors, 2022</a>]</span>. Furthermore, optimism in the spring about a potential bounty harvest in Tunisian wheat production has turned into concern over a crop damaged severaly by wildfires and drought <span id="id10">[<a class="reference internal" href="#id21" title="T Amara. Heat wave and fires damaging tunisia's grain harvest. Swissinfo.ch, 2022. Accessed: 2022-07-23. doi:https://www.swissinfo.ch/eng/heat-wave-and-fires-damaging-tunisia-s-grain-harvest/47706168.">Amara, 2022</a>]</span>.</p>
+<figure class="align-default" id="historical-statistics-on-wheat-in-tunisia">
+<a class="reference internal image-reference" href="_images/summary_wheat.png"><img alt="_images/summary_wheat.png" src="_images/summary_wheat.png" style="height: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Top: Annual wheat production (green), imports (yellow), consumption (blue); Bottom: harvest area, with respected growth rates; Data from <a class="reference external" href="http://IndexMundi.com">IndexMundi.com</a></span><a class="headerlink" href="#historical-statistics-on-wheat-in-tunisia" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As current events discussed previously demonstrate, Tunisia’s population of 11 million <span id="id11">[<a class="reference internal" href="#id22" title="WorldBank. World bank tunisia development indicators. https://databank.worldbank.org/reports, 2022. Accessed: 2022-07-23.">WorldBank, 2022</a>]</span> already faces signifcant climate challenges. Tunsia’s climate is typified by the lack of rain in the summer, and the opportunity to grow crops during the wet and relatively mild winders, as the monthly figures for precipation and air temperature <span id="id12">[<a class="reference internal" href="#id23" title="WorldBank. World bank tunisia climate data portal. https://climateknowledgeportal.worldbank.org/country/tunisia/climate-data-historical, 2022. Accessed: 2022-07-23.">WorldBank, 2022</a>]</span> show in Figure 3. According to the Köppen-Geiger climate classication, Tunisia is already in an arid mediteranean climate, with a very dry summer, and the outlook is that increasingly desert-like conditions will encroach within the next several decades <span id="id13">[<a class="reference internal" href="#id19" title="H Beck, N Zimmerman, Tim Mcicar, N Vergopolan, A Berg, and E Wood. Present and future köppen-geiger climate classification maps at 1-km resolution. Scientific Data, 2018. doi:https://doi.org/10.1038%2Fsdata.2018.214.">Beck <em>et al.</em>, 2018</a>]</span>.</p>
+<figure class="align-default" id="tunis-climate">
+<a class="reference internal image-reference" href="_images/summary_temp_rain.png"><img alt="_images/summary_temp_rain.png" src="_images/summary_temp_rain.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Temperature and precipitation over the year, data from the World Bank</span><a class="headerlink" href="#tunis-climate" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="deficit-irrigation">
+<h2>Deficit irrigation<a class="headerlink" href="#deficit-irrigation" title="Permalink to this headline">#</a></h2>
+<p>Deficit Irrigation is a strategy of irrigating strategically during a crop’s phenological development to maximize the yield of the crop given significant constraints on irrigation <span id="id14">[<a class="reference internal" href="#id20" title="G.D. Schaible and M.P. Aillery. Chapter 2.1.1 - challenges for us irrigated agriculture in the face of emerging demands and climate change. In Jadwiga R. Ziolkowska and Jeffrey M. Peterson, editors, Competition for Water Resources, pages 44-79. Elsevier, 2017. URL: https://www.sciencedirect.com/science/article/pii/B9780128032374000045, doi:https://doi.org/10.1016/B978-0-12-803237-4.00004-5.">Schaible and Aillery, 2017</a>]</span>. As previously described, Tunisia is an arid mediteranean climate where deficit irrigation is already practiced. Available projects show that precipitation will likely decrease and temperatures will likely increase, both factors that decrease the water availability in the soil for crop development. This means that deficit irrigation will be an increasingly important topic for Tunisia and the region going forward.</p>
+<p>In order to optimize irrigation one needs to identify the different phenological stages of the plants growing cycle. The below figure gives the major growing stages of Durum wheat under two growing conditions, the first simulating conitions in 2020 and the second simulationg projected conditions in 2070 in Italy <span id="id15">[<a class="reference internal" href="#id32" title="Erika Sabella, Alessio Aprile, Carmine Negro, Francesca Nicolì, Eliana Nutricati, Marzia Vergine, Andrea Luvisi, and Luigi De Bellis. Impact of climate change on durum wheat yield. Agronomy, 10:, 06 2020. doi:10.3390/agronomy10060793.">Sabella <em>et al.</em>, 2020</a>]</span>. Considering Tunisia is a similar climate, but a bit more arid, it was decided to use a subjective combination of the 2020 and 2070 indications to represent the phenological stages for Winter Wheat in Tunisia. While there is a certain amount of variation of phenological development based on the exact variety, field management and local climate and soil conditions, this graphic agrees roughly with other sources and provides the baseline phenological stages for this report <span id="id16">[<a class="reference internal" href="#id30" title="GRDC. Grains research and development corporation grow notes: durum section 3: plant growth (phenology). https://grdc.com.au/resources-and-publications/grownotes/crop-agronomy/durum-western/GrowNote-Durum-West-3-Plant-Growth.pdf, 2022. Accessed: 2022-07-25.">GRDC, 2022</a>]</span>. In this study, deficit irrigation is reduced to irrigating three times during the growing season. The first occurs at planting, while the second and third irrigation dates are chosen from different stages in the plants phenological cycle.</p>
+<figure class="align-default" id="phenology">
+<a class="reference internal image-reference" href="_images/pheno.png"><img alt="_images/pheno.png" src="_images/pheno.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Phenological development of Winter Wheat</span><a class="headerlink" href="#phenology" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="docutils container" id="id17">
+<dl class="citation">
+<dt class="label" id="id21"><span class="brackets"><a class="fn-backref" href="#id10">Ama22</a></span></dt>
+<dd><p>T Amara. Heat wave and fires damaging tunisia's grain harvest. <em>Swissinfo.ch</em>, 2022. Accessed: 2022-07-23. <a class="reference external" href="https://doi.org/https://www.swissinfo.ch/eng/heat-wave-and-fires-damaging-tunisia-s-grain-harvest/47706168">doi:https://www.swissinfo.ch/eng/heat-wave-and-fires-damaging-tunisia-s-grain-harvest/47706168</a>.</p>
+</dd>
+<dt class="label" id="id19"><span class="brackets"><a class="fn-backref" href="#id13">BZM+18</a></span></dt>
+<dd><p>H Beck, N Zimmerman, Tim Mcicar, N Vergopolan, A Berg, and E Wood. Present and future köppen-geiger climate classification maps at 1-km resolution. <em>Scientific Data</em>, 2018. <a class="reference external" href="https://doi.org/https://doi.org/10.1038%2Fsdata.2018.214">doi:https://doi.org/10.1038%2Fsdata.2018.214</a>.</p>
+</dd>
+<dt class="label" id="id18"><span class="brackets"><a class="fn-backref" href="#id9">Edi22</a></span></dt>
+<dd><p>Editors. Tunisia struggles to grow more wheat as ukraine war bites. <em>africanews</em>, 2022. Accessed: 2022-07-23. <a class="reference external" href="https://doi.org/https://www.africanews.com/2022/07/05/tunisia-struggles-to-grow-more-wheat-as-ukraine-war-bites/">doi:https://www.africanews.com/2022/07/05/tunisia-struggles-to-grow-more-wheat-as-ukraine-war-bites/</a>.</p>
+</dd>
+<dt class="label" id="id28"><span class="brackets"><a class="fn-backref" href="#id2">FAO22</a></span></dt>
+<dd><p>FAO. The importance of ukraine and the russian federation for global agricultural markets and the risks associated with the war in ukrainel. https://www.fao.org/3/cb9013en/cb9013en.pdf, 2022. Accessed: 2022-07-25.</p>
+</dd>
+<dt class="label" id="id27"><span class="brackets"><a class="fn-backref" href="#id4">Fos19</a></span></dt>
+<dd><p>T Foster. Aquacrop-os reference manual. https://www.aquacropos.com/uploads/1/0/9/8/109819842/aquacropos_usermanual_v60a.pdf, 2019. Accessed: 2022-07-25.</p>
+</dd>
+<dt class="label" id="id34"><span class="brackets"><a class="fn-backref" href="#id3">FBB+17</a></span></dt>
+<dd><p>T. Foster, N. Brozović, A.P. Butler, C.M.U. Neale, D. Raes, P. Steduto, E. Fereres, and T.C. Hsiao. Aquacrop-os: an open source version of fao's crop water productivity model. <em>Agricultural Water Management</em>, 181:18–22, 2017. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0378377416304589">https://www.sciencedirect.com/science/article/pii/S0378377416304589</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/j.agwat.2016.11.015">doi:https://doi.org/10.1016/j.agwat.2016.11.015</a>.</p>
+</dd>
+<dt class="label" id="id30"><span class="brackets"><a class="fn-backref" href="#id16">GRD22</a></span></dt>
+<dd><p>GRDC. Grains research and development corporation grow notes: durum section 3: plant growth (phenology). https://grdc.com.au/resources-and-publications/grownotes/crop-agronomy/durum-western/GrowNote-Durum-West-3-Plant-Growth.pdf, 2022. Accessed: 2022-07-25.</p>
+</dd>
+<dt class="label" id="id25"><span class="brackets"><a class="fn-backref" href="#id7">Ind22</a></span></dt>
+<dd><p>IndexMundi. Tunisa wheat production. https://www.indexmundi.com/agriculture/, 2022. Accessed: 2022-07-23.</p>
+</dd>
+<dt class="label" id="id29"><span class="brackets"><a class="fn-backref" href="#id6">Kel22</a></span></dt>
+<dd><p>T Kelly. Aquacrop-ospy. https://aquacropos.github.io/aquacrop/, 2022. Accessed: 2022-07-25.</p>
+</dd>
+<dt class="label" id="id31"><span class="brackets"><a class="fn-backref" href="#id5">KF21</a></span></dt>
+<dd><p>T.D. Kelly and T. Foster. Aquacrop-ospy: bridging the gap between research and practice in crop-water modeling. <em>Agricultural Water Management</em>, 254:106976, 2021. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0378377421002419">https://www.sciencedirect.com/science/article/pii/S0378377421002419</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/j.agwat.2021.106976">doi:https://doi.org/10.1016/j.agwat.2021.106976</a>.</p>
+</dd>
+<dt class="label" id="id24"><span class="brackets"><a class="fn-backref" href="#id8">OfEC22</a></span></dt>
+<dd><p>OEC Organization for Economic Cooperation. Wheat in tunisia. https://oec.world/en/profile/bilateral-product/wheat/reporter/tun#subnational-data, 2022. Accessed: 2022-07-23.</p>
+</dd>
+<dt class="label" id="id32"><span class="brackets"><a class="fn-backref" href="#id15">SAN+20</a></span></dt>
+<dd><p>Erika Sabella, Alessio Aprile, Carmine Negro, Francesca Nicolì, Eliana Nutricati, Marzia Vergine, Andrea Luvisi, and Luigi De Bellis. Impact of climate change on durum wheat yield. <em>Agronomy</em>, 10:, 06 2020. <a class="reference external" href="https://doi.org/10.3390/agronomy10060793">doi:10.3390/agronomy10060793</a>.</p>
+</dd>
+<dt class="label" id="id20"><span class="brackets"><a class="fn-backref" href="#id14">SA17</a></span></dt>
+<dd><p>G.D. Schaible and M.P. Aillery. Chapter 2.1.1 - challenges for us irrigated agriculture in the face of emerging demands and climate change. In Jadwiga R. Ziolkowska and Jeffrey M. Peterson, editors, <em>Competition for Water Resources</em>, pages 44–79. Elsevier, 2017. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/B9780128032374000045">https://www.sciencedirect.com/science/article/pii/B9780128032374000045</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/B978-0-12-803237-4.00004-5">doi:https://doi.org/10.1016/B978-0-12-803237-4.00004-5</a>.</p>
+</dd>
+<dt class="label" id="id33"><span class="brackets"><a class="fn-backref" href="#id1">SHRF09</a></span></dt>
+<dd><p>Pasquale Steduto, Theodore C. Hsiao, Dirk Raes, and Elias Fereres. Aquacrop—the fao crop model to simulate yield response to water: i. concepts and underlying principles. <em>Agronomy Journal</em>, 101(3):426–437, 2009. URL: <a class="reference external" href="https://acsess.onlinelibrary.wiley.com/doi/abs/10.2134/agronj2008.0139s">https://acsess.onlinelibrary.wiley.com/doi/abs/10.2134/agronj2008.0139s</a>, <a class="reference external" href="https://arxiv.org/abs/https://acsess.onlinelibrary.wiley.com/doi/pdf/10.2134/agronj2008.0139s">arXiv:https://acsess.onlinelibrary.wiley.com/doi/pdf/10.2134/agronj2008.0139s</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.2134/agronj2008.0139s">doi:https://doi.org/10.2134/agronj2008.0139s</a>.</p>
+</dd>
+<dt class="label" id="id23"><span class="brackets"><a class="fn-backref" href="#id12">Wor22a</a></span></dt>
+<dd><p>WorldBank. World bank tunisia climate data portal. https://climateknowledgeportal.worldbank.org/country/tunisia/climate-data-historical, 2022. Accessed: 2022-07-23.</p>
+</dd>
+<dt class="label" id="id22"><span class="brackets"><a class="fn-backref" href="#id11">Wor22b</a></span></dt>
+<dd><p>WorldBank. World bank tunisia development indicators. https://databank.worldbank.org/reports, 2022. Accessed: 2022-07-23.</p>
+</dd>
+</dl>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Abstract</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="methodology.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Methodology</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Gabrial Erismann<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

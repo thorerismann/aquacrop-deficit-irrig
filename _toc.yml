@@ -1,0 +1,11 @@
+# Table of contents for Aquacrop report
+
+format: jb-book
+root: intro.md
+chapters:
+- file: background.md
+- file: methodology.md
+- file: results.md
+- file: discussion.md
+- file: conclusion.md
+- file: annex1.md

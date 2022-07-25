@@ -1,0 +1,1149 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Interval 1 (29,59) AKA (13-01, 12-02) &#8212; Plotting the effects of varying irrigation dates and depths using Aquacrop OSPY</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Plotting the effects of varying irrigation dates and depths using Aquacrop OSPY</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Finding optimal irrigation dates for deficit irrigation using AQUACROP-OSPY
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../background.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../methodology.html">
+   Methodology
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../results.html">
+   Results
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../conclusion.html">
+   Conclusion
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/thorerismann/aqaucrop-ospy-climate/master?urlpath=tree/notebooks/gen_intervals.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/thorerismann/aqaucrop-ospy-climate"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/thorerismann/aqaucrop-ospy-climate/issues/new?title=Issue%20on%20page%20%2Fnotebooks/gen_intervals.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/notebooks/gen_intervals.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Interval 1 (29,59) AKA (13-01, 12-02)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interval-2-29-79-aka-13-01-03-03">
+   Interval 2 (29,79) AKA (13-01, 03-03)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interval-3-29-114-aka-13-01-07-04">
+   Interval 3 (29,114) AKA (13-01, 07-04)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interval-4-59-144-aka-02-12-07-05">
+   Interval 4 (59,144) AKA (02-12, 07-05)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interval-5-114-144-aka-04-20-07-05">
+   Interval 5 (114,144) AKA (04-20, 07-05)
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Interval 1 (29,59) AKA (13-01, 12-02)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Interval 1 (29,59) AKA (13-01, 12-02)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interval-2-29-79-aka-13-01-03-03">
+   Interval 2 (29,79) AKA (13-01, 03-03)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interval-3-29-114-aka-13-01-07-04">
+   Interval 3 (29,114) AKA (13-01, 07-04)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interval-4-59-144-aka-02-12-07-05">
+   Interval 4 (59,144) AKA (02-12, 07-05)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interval-5-114-144-aka-04-20-07-05">
+   Interval 5 (114,144) AKA (04-20, 07-05)
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import packages</span>
+<span class="kn">from</span> <span class="nn">aquacrop</span> <span class="kn">import</span> <span class="n">AquaCropModel</span><span class="p">,</span> <span class="n">Soil</span><span class="p">,</span> <span class="n">Crop</span><span class="p">,</span> <span class="n">InitialWaterContent</span><span class="p">,</span> <span class="n">IrrigationManagement</span>
+<span class="kn">from</span> <span class="nn">aquacrop.utils</span> <span class="kn">import</span> <span class="n">prepare_weather</span><span class="p">,</span> <span class="n">get_filepath</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mplt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># get current working directory to load and save files</span>
+<span class="n">thedir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+
+<span class="c1"># use cwd to to get folders containing figures and data</span>
+<span class="n">datadir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">thedir</span><span class="p">),</span> <span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;aquacrop_py/model_results&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Green"> Compiling modules... This could take some time.</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green"> Note: The compilation is only necessary the first time that the library is used.</span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 20/20 [01:31&lt;00:00,  4.59s/it]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_date</span><span class="p">(</span><span class="n">first</span><span class="p">,</span><span class="n">last</span><span class="p">,</span><span class="n">year</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    function generates a random date in the interval [first, last]</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    first1 (str): start of interval of possible watering dates</span>
+<span class="sd">    last1 (str): end of interval of possible watering dates</span>
+<span class="sd">    year (int): the year to use</span>
+<span class="sd">    Returns:</span>
+<span class="sd">    str: a YYYY-MM-DD str of a date between the provided intervals</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">first</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">first</span><span class="p">[</span><span class="mi">3</span><span class="p">:]))</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">last</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">last</span><span class="p">[</span><span class="mi">3</span><span class="p">:]))</span>
+    <span class="n">interval_time</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span>
+    <span class="n">interval_days</span> <span class="o">=</span> <span class="n">interval_time</span><span class="o">.</span><span class="n">days</span>
+    <span class="n">random_days</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="n">interval_days</span><span class="p">)</span>
+    <span class="n">irrig</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">start</span> <span class="o">+</span> <span class="n">dt</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span> <span class="o">=</span> <span class="n">random_days</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">irrig</span><span class="p">[</span><span class="mi">5</span><span class="p">:]</span><span class="o">==</span><span class="s2">&quot;02-29&quot;</span><span class="p">:</span>
+        <span class="n">irrig</span> <span class="o">=</span> <span class="n">get_date</span><span class="p">(</span><span class="n">first</span><span class="p">,</span><span class="n">last</span><span class="p">,</span><span class="n">year</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">irrig</span>
+
+<span class="k">def</span> <span class="nf">genStableCalendar</span><span class="p">(</span><span class="n">first1</span><span class="p">,</span><span class="n">last1</span><span class="p">,</span><span class="n">first2</span><span class="p">,</span><span class="n">last2</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">depth</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    function to generate random days for each run of the model but remains constant across growing seasons</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    first1 (str): start of first interval of possible watering dates</span>
+<span class="sd">    last1 (str): end of first interval of possible watering dates</span>
+<span class="sd">    first2 (str): start of second interval of possible watering dates</span>
+<span class="sd">    last2 (str): end of second interval of possible watering dates</span>
+<span class="sd">    year (int): the year to begin</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    list: returns a list of two elements [OSPY calendar item,list of dates]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cal</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">md</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">cal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">-12-15&#39;</span><span class="p">)</span>
+    <span class="n">first</span> <span class="o">=</span> <span class="n">get_date</span><span class="p">(</span><span class="n">first1</span><span class="p">,</span><span class="n">last1</span><span class="p">,</span><span class="n">year</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">second</span> <span class="o">=</span> <span class="n">get_date</span><span class="p">(</span><span class="n">first2</span><span class="p">,</span><span class="n">last2</span><span class="p">,</span><span class="n">year</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">day_month</span> <span class="o">=</span> <span class="n">first</span><span class="p">[</span><span class="mi">5</span><span class="p">:]</span>
+    <span class="n">day_month_</span> <span class="o">=</span> <span class="n">second</span><span class="p">[</span><span class="mi">5</span><span class="p">:]</span>
+    <span class="n">cal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">first</span><span class="p">)</span>
+    <span class="n">cal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">second</span><span class="p">)</span>
+    <span class="n">md</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">day_month</span><span class="p">,</span><span class="n">day_month_</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">year</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">2003</span><span class="p">):</span>
+        <span class="n">cal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">-12-15&#39;</span><span class="p">)</span>
+        <span class="n">cal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">day_month</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">cal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">day_month_</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">calendar_pd</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cal</span><span class="p">)</span>
+    <span class="n">cal_pd</span> <span class="o">=</span> <span class="n">calendar_pd</span><span class="o">.</span><span class="n">set_axis</span><span class="p">([</span><span class="s1">&#39;Date&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">cal_pd</span><span class="p">[</span><span class="s1">&#39;Depth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">depth</span>
+    <span class="c1"># irrigation</span>
+    <span class="c1"># note that clean water is not specified as it is the default value for irrigation.</span>
+    <span class="c1"># note that the default irrigitation method is used to achieve the 30 cm)</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">IrrigationManagement</span><span class="p">(</span><span class="n">irrigation_method</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">Schedule</span> <span class="o">=</span> <span class="n">cal_pd</span><span class="p">,</span><span class="n">AppEff</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span><span class="n">WetSurf</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">im</span><span class="p">,</span><span class="n">md</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">genExactCal</span><span class="p">(</span><span class="n">first</span><span class="p">,</span><span class="n">second</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">depth</span><span class="p">):</span>
+    <span class="n">cal</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">md</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">cal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">-12-15&#39;</span><span class="p">)</span>
+    <span class="n">cal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">year</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">first</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">cal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">year</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">second</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">year</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">2003</span><span class="p">):</span>
+        <span class="n">cal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">-12-15&#39;</span><span class="p">)</span>
+        <span class="n">cal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">first</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">cal</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">second</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">calendar_pd</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">cal</span><span class="p">)</span>
+    <span class="n">cal_pd</span> <span class="o">=</span> <span class="n">calendar_pd</span><span class="o">.</span><span class="n">set_axis</span><span class="p">([</span><span class="s1">&#39;Date&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">cal_pd</span><span class="p">[</span><span class="s1">&#39;Depth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">depth</span>
+    <span class="c1"># irrigation</span>
+    <span class="c1"># note that clean water is not specified as it is the default value for irrigation.</span>
+    <span class="c1"># note that the default irrigitation method is used to achieve the 30 cm)</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">IrrigationManagement</span><span class="p">(</span><span class="n">irrigation_method</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">Schedule</span> <span class="o">=</span> <span class="n">cal_pd</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">im</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">runStable</span><span class="p">(</span><span class="n">runs</span><span class="p">,</span><span class="n">first1</span><span class="p">,</span><span class="n">last1</span><span class="p">,</span><span class="n">first2</span><span class="p">,</span><span class="n">last2</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">depth</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    function runs the stable calendar</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    runs (int): the number of runs</span>
+<span class="sd">    first1 (str): start of first interval of possible watering dates</span>
+<span class="sd">    last1 (str): end of first interval of possible watering dates</span>
+<span class="sd">    first2 (str): start of second interval of possible watering dates</span>
+<span class="sd">    last2 (str): end of second interval of possible watering dates</span>
+<span class="sd">    year (int): the year to begin</span>
+<span class="sd">    Returns:</span>
+<span class="sd">    list: returns a list of two elements [outputs dataframe,list of dates]</span>
+<span class="sd">    &quot;&quot;&quot;</span> 
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">mylist</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">dates</span><span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">runs</span><span class="p">:</span>
+        <span class="n">newcal</span> <span class="o">=</span> <span class="n">genStableCalendar</span><span class="p">(</span><span class="n">first1</span><span class="p">,</span><span class="n">last1</span><span class="p">,</span><span class="n">first2</span><span class="p">,</span><span class="n">last2</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">depth</span><span class="p">)</span>
+        <span class="n">cal</span> <span class="o">=</span> <span class="n">newcal</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">dates</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">newcal</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">mylist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">run_model</span><span class="p">(</span><span class="n">cal</span><span class="p">,</span><span class="n">i</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">10</span>==0:
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;run # </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="n">new_stable</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">new_stable</span><span class="p">,</span><span class="n">dates</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">runExact</span><span class="p">(</span><span class="n">first</span><span class="p">,</span><span class="n">second</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">depth</span><span class="p">):</span>
+    <span class="n">newcal</span> <span class="o">=</span> <span class="n">genExactCal</span><span class="p">(</span><span class="n">first</span><span class="p">,</span><span class="n">second</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">depth</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">run_model_</span><span class="p">(</span><span class="n">newcal</span><span class="p">)</span>
+    <span class="n">a</span><span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">first</span><span class="p">[:</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">first</span><span class="p">[</span><span class="mi">3</span><span class="p">:]))</span>
+    <span class="n">a</span><span class="p">[</span><span class="s1">&#39;second&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">second</span><span class="p">[:</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">second</span><span class="p">[</span><span class="mi">3</span><span class="p">:]))</span>
+    <span class="k">return</span> <span class="n">a</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run_model</span><span class="p">(</span><span class="n">cal</span><span class="p">,</span><span class="n">i</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">AquaCropModel</span><span class="p">(</span><span class="n">sim_start_time</span><span class="o">=</span><span class="n">simStart</span><span class="p">,</span>
+                      <span class="n">sim_end_time</span><span class="o">=</span><span class="n">simEnd</span><span class="p">,</span>
+                      <span class="n">weather_df</span><span class="o">=</span><span class="n">weather_data</span><span class="p">,</span>
+                      <span class="n">soil</span><span class="o">=</span><span class="n">my_soil</span><span class="p">,</span>
+                      <span class="n">crop</span><span class="o">=</span><span class="n">my_crop</span><span class="p">,</span>
+                      <span class="n">initial_water_content</span><span class="o">=</span><span class="n">my_iwc</span><span class="p">,</span>
+                      <span class="n">irrigation_management</span><span class="o">=</span><span class="n">cal</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">run_model</span><span class="p">(</span><span class="n">till_termination</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="n">final_stats</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">_outputs</span><span class="o">.</span><span class="n">final_stats</span>
+    
+    <span class="c1"># assemble water variables</span>
+    <span class="n">water_flux</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">_outputs</span><span class="o">.</span><span class="n">water_flux</span>
+    <span class="n">wf</span> <span class="o">=</span> <span class="n">water_flux</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;season_counter&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">wf</span> <span class="o">=</span> <span class="n">wf</span><span class="p">[[</span><span class="s2">&quot;Es&quot;</span><span class="p">]]</span>
+    <span class="n">wf</span><span class="p">[</span><span class="s2">&quot;Season&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">wf</span><span class="o">.</span><span class="n">index</span>
+    <span class="n">wf</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">wf</span> <span class="o">=</span> <span class="n">wf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+    <span class="c1"># assemble crop growth variables</span>
+    <span class="n">crop_growth</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">_outputs</span><span class="o">.</span><span class="n">crop_growth</span>
+    <span class="n">crop_growth</span><span class="p">[</span><span class="s2">&quot;Season&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">crop_growth</span><span class="p">[</span><span class="s2">&quot;season_counter&quot;</span><span class="p">]</span>
+    <span class="n">crops_max</span> <span class="o">=</span> <span class="n">crop_growth</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;season_counter&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">max</span><span class="p">()[[</span><span class="s2">&quot;biomass&quot;</span><span class="p">,</span><span class="s2">&quot;harvest_index&quot;</span><span class="p">,</span><span class="s2">&quot;biomass_ns&quot;</span><span class="p">,</span><span class="s2">&quot;canopy_cover&quot;</span><span class="p">,</span><span class="s2">&quot;Season&quot;</span><span class="p">]]</span>
+    <span class="n">crops_max</span> <span class="o">=</span> <span class="n">crops_max</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+    <span class="n">merged</span> <span class="o">=</span> <span class="n">final_stats</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wf</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Season&quot;</span><span class="p">])</span>
+    <span class="n">outputs</span> <span class="o">=</span> <span class="n">merged</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">crops_max</span><span class="p">,</span><span class="n">how</span> <span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span><span class="p">[</span><span class="s2">&quot;Season&quot;</span><span class="p">])</span>
+    <span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;run&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">i</span>
+
+    <span class="k">return</span> <span class="n">outputs</span>
+
+<span class="k">def</span> <span class="nf">run_model_</span><span class="p">(</span><span class="n">cal</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">AquaCropModel</span><span class="p">(</span><span class="n">sim_start_time</span><span class="o">=</span><span class="n">simStart</span><span class="p">,</span>
+                      <span class="n">sim_end_time</span><span class="o">=</span><span class="n">simEnd</span><span class="p">,</span>
+                      <span class="n">weather_df</span><span class="o">=</span><span class="n">weather_data</span><span class="p">,</span>
+                      <span class="n">soil</span><span class="o">=</span><span class="n">my_soil</span><span class="p">,</span>
+                      <span class="n">crop</span><span class="o">=</span><span class="n">my_crop</span><span class="p">,</span>
+                      <span class="n">initial_water_content</span><span class="o">=</span><span class="n">my_iwc</span><span class="p">,</span>
+                      <span class="n">irrigation_management</span><span class="o">=</span><span class="n">cal</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">run_model</span><span class="p">(</span><span class="n">till_termination</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="n">final_stats</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">_outputs</span><span class="o">.</span><span class="n">final_stats</span>
+    
+    <span class="c1"># assemble water variables</span>
+    <span class="n">water_flux</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">_outputs</span><span class="o">.</span><span class="n">water_flux</span>
+    <span class="n">wf</span> <span class="o">=</span> <span class="n">water_flux</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;season_counter&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">wf</span> <span class="o">=</span> <span class="n">wf</span><span class="p">[[</span><span class="s2">&quot;Es&quot;</span><span class="p">]]</span>
+    <span class="n">wf</span><span class="p">[</span><span class="s2">&quot;Season&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">wf</span><span class="o">.</span><span class="n">index</span>
+    <span class="n">wf</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">wf</span> <span class="o">=</span> <span class="n">wf</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+    <span class="c1"># assemble crop growth variables</span>
+    <span class="n">crop_growth</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">_outputs</span><span class="o">.</span><span class="n">crop_growth</span>
+    <span class="n">crop_growth</span><span class="p">[</span><span class="s2">&quot;Season&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">crop_growth</span><span class="p">[</span><span class="s2">&quot;season_counter&quot;</span><span class="p">]</span>
+    <span class="n">crops_max</span> <span class="o">=</span> <span class="n">crop_growth</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;season_counter&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">max</span><span class="p">()[[</span><span class="s2">&quot;biomass&quot;</span><span class="p">,</span><span class="s2">&quot;harvest_index&quot;</span><span class="p">,</span><span class="s2">&quot;biomass_ns&quot;</span><span class="p">,</span><span class="s2">&quot;canopy_cover&quot;</span><span class="p">,</span><span class="s2">&quot;Season&quot;</span><span class="p">]]</span>
+    <span class="n">crops_max</span> <span class="o">=</span> <span class="n">crops_max</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+    <span class="n">merged</span> <span class="o">=</span> <span class="n">final_stats</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wf</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Season&quot;</span><span class="p">])</span>
+    <span class="n">outputs</span> <span class="o">=</span> <span class="n">merged</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">crops_max</span><span class="p">,</span><span class="n">how</span> <span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span><span class="p">[</span><span class="s2">&quot;Season&quot;</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">outputs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># assign outputs from stable</span>
+<span class="k">def</span> <span class="nf">getOutputsPD</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    function to get results pd from results list</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ns_pd</span> <span class="o">=</span> <span class="n">new_stable</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">ns_pd</span>
+
+<span class="k">def</span> <span class="nf">getOutputsDate</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    function to get dates pd from results list</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ns_dt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">new_stable</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">ns_dt</span>
+
+<span class="k">def</span> <span class="nf">getDates</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span><span class="n">df2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    function to get dates pd into usefel format</span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    runs (int): the number of runs</span>
+<span class="sd">    first1 (str): start of first interval of possible watering dates</span>
+<span class="sd">    last1 (str): end of first interval of possible watering dates</span>
+<span class="sd">    first2 (str): start of second interval of possible watering dates</span>
+<span class="sd">    last2 (str): end of second interval of possible watering dates</span>
+<span class="sd">    year (int): the year to begin</span>
+<span class="sd">    Returns:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># assign outputs from random</span>
+    <span class="c1">#nr_pd = new_random[0]</span>
+
+    <span class="c1"># turn randomized dates into panda dataframes for inclusion in analysis</span>
+
+    <span class="c1"># clean-up nested list of lists of lists into useful panda dataframe object</span>
+    <span class="n">col_1</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">col_2</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">first</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">second</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">run</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">col_1</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">i</span><span class="p">:</span>
+            <span class="n">first</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">j</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">second</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">j</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">run</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span>
+    <span class="n">stable_dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;run&quot;</span><span class="p">:</span><span class="n">run</span><span class="p">,</span><span class="s2">&quot;date_1&quot;</span><span class="p">:</span><span class="n">first</span><span class="p">,</span><span class="s2">&quot;date_2&quot;</span><span class="p">:</span><span class="n">second</span><span class="p">})</span>
+
+    <span class="c1"># create new dataframe of the same length as outputs object for later merging</span>
+
+    <span class="n">first</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">last</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">run</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df2</span><span class="o">.</span><span class="n">run</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stable_dates</span><span class="o">.</span><span class="n">run</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">stable_dates</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="s2">&quot;run&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">:</span>
+                <span class="n">first</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stable_dates</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="s2">&quot;date_1&quot;</span><span class="p">])</span>
+                <span class="n">last</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stable_dates</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="s2">&quot;date_2&quot;</span><span class="p">])</span>
+                <span class="n">run</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">stable_dates_</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;date_1&quot;</span><span class="p">:</span><span class="n">first</span><span class="p">,</span><span class="s2">&quot;date_2&quot;</span><span class="p">:</span><span class="n">last</span><span class="p">,</span><span class="s2">&quot;run&quot;</span><span class="p">:</span><span class="n">run</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">stable_dates</span>
+
+<span class="k">def</span> <span class="nf">getStatsRuns</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span><span class="n">df2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    function runs the stable calendar</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    ns_pd (df): dataframe of outputs from runs</span>
+<span class="sd">    Returns:</span>
+<span class="sd">    list: returns a dataframe of statistics aggregated across runs.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">stats</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;run&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;Yield (tonne/ha)&quot;</span><span class="p">:[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span><span class="s2">&quot;median&quot;</span><span class="p">,</span><span class="s2">&quot;max&quot;</span><span class="p">,</span><span class="s2">&quot;min&quot;</span><span class="p">,</span><span class="s2">&quot;var&quot;</span><span class="p">],</span>
+                               <span class="s2">&quot;Es&quot;</span><span class="p">:[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span><span class="s2">&quot;median&quot;</span><span class="p">,</span><span class="s2">&quot;max&quot;</span><span class="p">,</span><span class="s2">&quot;min&quot;</span><span class="p">,</span><span class="s2">&quot;var&quot;</span><span class="p">],</span>
+                               <span class="s2">&quot;biomass&quot;</span><span class="p">:[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span><span class="s2">&quot;median&quot;</span><span class="p">,</span><span class="s2">&quot;max&quot;</span><span class="p">,</span><span class="s2">&quot;min&quot;</span><span class="p">,</span><span class="s2">&quot;var&quot;</span><span class="p">],</span>
+                               <span class="s2">&quot;harvest_index&quot;</span><span class="p">:[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span><span class="s2">&quot;median&quot;</span><span class="p">,</span><span class="s2">&quot;max&quot;</span><span class="p">,</span><span class="s2">&quot;min&quot;</span><span class="p">,</span><span class="s2">&quot;var&quot;</span><span class="p">],</span>
+                                   <span class="s2">&quot;canopy_cover&quot;</span><span class="p">:[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span><span class="s2">&quot;median&quot;</span><span class="p">,</span><span class="s2">&quot;max&quot;</span><span class="p">,</span><span class="s2">&quot;min&quot;</span><span class="p">,</span><span class="s2">&quot;var&quot;</span><span class="p">]})</span>
+    <span class="c1"># flatten multilevel column index using &quot;-&quot; to join levels.</span>
+    <span class="n">stats</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;_&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pair</span><span class="p">)</span> <span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">stats</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+    <span class="c1"># merge dates into stats dataframe. Merge on &quot;run&quot; column.</span>
+    <span class="n">stats</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">stats</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">stats</span>
+
+<span class="k">def</span> <span class="nf">getStatsSeasons</span><span class="p">(</span><span class="n">df1</span><span class="p">):</span>
+    <span class="n">stats_2</span> <span class="o">=</span> <span class="n">df1</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Season&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;Yield (tonne/ha)&quot;</span><span class="p">:[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span><span class="s2">&quot;median&quot;</span><span class="p">,</span><span class="s2">&quot;max&quot;</span><span class="p">,</span><span class="s2">&quot;min&quot;</span><span class="p">,</span><span class="s2">&quot;var&quot;</span><span class="p">],</span>
+                               <span class="s2">&quot;Es&quot;</span><span class="p">:[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span><span class="s2">&quot;median&quot;</span><span class="p">,</span><span class="s2">&quot;max&quot;</span><span class="p">,</span><span class="s2">&quot;min&quot;</span><span class="p">,</span><span class="s2">&quot;var&quot;</span><span class="p">],</span>
+                               <span class="s2">&quot;biomass&quot;</span><span class="p">:[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span><span class="s2">&quot;median&quot;</span><span class="p">,</span><span class="s2">&quot;max&quot;</span><span class="p">,</span><span class="s2">&quot;var&quot;</span><span class="p">],</span>
+                               <span class="s2">&quot;harvest_index&quot;</span><span class="p">:[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span><span class="s2">&quot;median&quot;</span><span class="p">,</span><span class="s2">&quot;max&quot;</span><span class="p">,</span><span class="s2">&quot;min&quot;</span><span class="p">,</span><span class="s2">&quot;var&quot;</span><span class="p">]})</span>
+    <span class="n">stats_2</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;_&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pair</span><span class="p">)</span> <span class="k">for</span> <span class="n">pair</span> <span class="ow">in</span> <span class="n">stats_2</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+    <span class="n">stats_2</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">F</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datadir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">date_pair</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">depth</span><span class="si">}</span><span class="s2">s.csv&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">getDays</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    function that appeds the number of days since planting for the first and second watering dates to the result of get_Stats()</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    df1 (df): dataframe of outputs from get_Stats</span>
+<span class="sd">    df2 (df): dataframe of dates from getDates</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">first</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">1979</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">date_1</span><span class="p">:</span>
+        <span class="n">diff</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">1980</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">[:</span><span class="mi">2</span><span class="p">]),</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">3</span><span class="p">:]))</span> <span class="o">-</span> <span class="n">start</span>
+        <span class="n">first</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
+    <span class="n">second</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">date_2</span><span class="p">:</span>
+        <span class="n">diff</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">1980</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">[:</span><span class="mi">2</span><span class="p">]),</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">3</span><span class="p">:]))</span> <span class="o">-</span> <span class="n">start</span>
+        <span class="n">second</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
+    <span class="n">stats</span><span class="p">[</span><span class="s2">&quot;irrig_1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">first</span>
+    <span class="n">stats</span><span class="p">[</span><span class="s2">&quot;irrig_2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">second</span>
+    <span class="n">stats</span><span class="p">[</span><span class="s2">&quot;irrigation_1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">irrig_1</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
+    <span class="n">stats</span><span class="p">[</span><span class="s2">&quot;irrigation_2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">irrig_2</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
+    <span class="n">stats</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">F</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datadir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">date_pair</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">depth</span><span class="si">}</span><span class="s2">.csv&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">getExact</span><span class="p">(</span><span class="n">date1</span><span class="p">,</span><span class="n">date2</span><span class="p">,</span><span class="n">depth</span><span class="p">):</span>
+    <span class="n">interval</span> <span class="o">=</span> <span class="n">runExact</span><span class="p">(</span><span class="n">date1</span><span class="p">,</span><span class="n">date2</span><span class="p">,</span><span class="mi">1979</span><span class="p">,</span><span class="n">depth</span><span class="p">)</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">interval</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Yield (tonne/ha)&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;var&#39;</span><span class="p">],</span> 
+                            <span class="s1">&#39;biomass&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;var&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;Es&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;var&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;harvest_index&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;var&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;canopy_cover&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;var&#39;</span><span class="p">]})</span>
+    <span class="n">summary</span><span class="p">[</span><span class="s2">&quot;date1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">date1</span>
+    <span class="n">summary</span><span class="p">[</span><span class="s2">&quot;date2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">date2</span>
+    <span class="k">return</span> <span class="n">summary</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># note that clean water is not specified as it is the default value for irrigation.</span>
+<span class="c1"># note that the default irrigitation method is used to achieve the 30 cm - unclear how to change to &quot;sprinkler&quot; irrigation.</span>
+<span class="c1"># declare basic parameters from instructions on exercise 7.7</span>
+
+<span class="n">filepath</span><span class="o">=</span><span class="n">get_filepath</span><span class="p">(</span><span class="s1">&#39;tunis_climate.txt&#39;</span><span class="p">)</span>
+<span class="n">weather_data</span> <span class="o">=</span> <span class="n">prepare_weather</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+<span class="n">my_soil</span> <span class="o">=</span> <span class="n">Soil</span><span class="p">(</span><span class="n">soil_type</span><span class="o">=</span><span class="s1">&#39;SandyLoam&#39;</span><span class="p">)</span>
+<span class="n">my_crop</span> <span class="o">=</span> <span class="n">Crop</span><span class="p">(</span><span class="s1">&#39;WheatGDD&#39;</span><span class="p">,</span> <span class="n">planting_date</span><span class="o">=</span><span class="s1">&#39;12/01&#39;</span><span class="p">)</span>
+<span class="n">my_iwc</span> <span class="o">=</span> <span class="n">InitialWaterContent</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;WP&quot;</span><span class="p">])</span>
+<span class="n">simStart</span> <span class="o">=</span> <span class="s2">&quot;1979/08/15&quot;</span>
+<span class="n">simEnd</span> <span class="o">=</span> <span class="s2">&quot;2002/05/31&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="interval-1-29-59-aka-13-01-12-02">
+<h1>Interval 1 (29,59) AKA (13-01, 12-02)<a class="headerlink" href="#interval-1-29-59-aka-13-01-12-02" title="Permalink to this headline">#</a></h1>
+<p>This is the first set of runs using a fixed date and an interval around it. A dataframe of results of all the exact dates is created and saved, as well as a dataframe representing the resuls of a fixed number of random runs in the interval around the selected date.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">depth</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">summary_1</span> <span class="o">=</span> <span class="n">getExact</span><span class="p">(</span><span class="s2">&quot;01-13&quot;</span><span class="p">,</span><span class="s2">&quot;02-12&quot;</span><span class="p">,</span><span class="n">depth</span><span class="p">)</span>
+
+<span class="n">runs_s</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">date_pair</span> <span class="o">=</span> <span class="s2">&quot;29_59&quot;</span>
+<span class="n">interval1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;01-05&quot;</span><span class="p">,</span><span class="s2">&quot;01-22&quot;</span><span class="p">]</span>
+<span class="n">interval2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;02-02&quot;</span><span class="p">,</span><span class="s2">&quot;02-22&quot;</span><span class="p">]</span>
+<span class="n">year</span> <span class="o">=</span> <span class="mi">1979</span>
+<span class="n">new_stable</span> <span class="o">=</span> <span class="n">runStable</span><span class="p">(</span><span class="n">runs_s</span><span class="p">,</span><span class="n">interval1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">interval1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">interval2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">interval2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">year</span><span class="p">,</span><span class="n">depth</span><span class="p">)</span>
+
+<span class="n">df1</span> <span class="o">=</span> <span class="n">getOutputsPD</span><span class="p">()</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="n">getOutputsDate</span><span class="p">()</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="n">getDates</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span><span class="n">df1</span><span class="p">)</span>
+<span class="n">stats</span> <span class="o">=</span> <span class="n">getStatsRuns</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span><span class="n">dates</span><span class="p">)</span>
+<span class="n">getDays</span><span class="p">(</span><span class="n">stats</span><span class="p">)</span>
+<span class="n">getStatsSeasons</span><span class="p">(</span><span class="n">df1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="interval-2-29-79-aka-13-01-03-03">
+<h1>Interval 2 (29,79) AKA (13-01, 03-03)<a class="headerlink" href="#interval-2-29-79-aka-13-01-03-03" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary_2</span> <span class="o">=</span> <span class="n">getExact</span><span class="p">(</span><span class="s1">&#39;01-13&#39;</span><span class="p">,</span><span class="s1">&#39;03-03&#39;</span><span class="p">,</span><span class="n">depth</span><span class="p">)</span>
+
+<span class="n">runs_s</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">date_pair</span> <span class="o">=</span> <span class="s2">&quot;29_79&quot;</span>
+<span class="n">interval1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;01-05&quot;</span><span class="p">,</span><span class="s2">&quot;01-21&quot;</span><span class="p">]</span>
+<span class="n">interval2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;02-23&quot;</span><span class="p">,</span><span class="s2">&quot;03-13&quot;</span><span class="p">]</span>
+<span class="n">year</span> <span class="o">=</span> <span class="mi">1979</span>
+<span class="n">new_stable</span> <span class="o">=</span> <span class="n">runStable</span><span class="p">(</span><span class="n">runs_s</span><span class="p">,</span><span class="n">interval1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">interval1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">interval2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">interval2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">year</span><span class="p">,</span><span class="n">depth</span><span class="p">)</span>
+
+<span class="n">df1</span> <span class="o">=</span> <span class="n">getOutputsPD</span><span class="p">()</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="n">getOutputsDate</span><span class="p">()</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="n">getDates</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span><span class="n">df1</span><span class="p">)</span>
+<span class="n">stats</span> <span class="o">=</span> <span class="n">getStatsRuns</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span><span class="n">dates</span><span class="p">)</span>
+<span class="n">getDays</span><span class="p">(</span><span class="n">stats</span><span class="p">)</span>
+<span class="n">getStatsSeasons</span><span class="p">(</span><span class="n">df1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="interval-3-29-114-aka-13-01-07-04">
+<h1>Interval 3 (29,114) AKA (13-01, 07-04)<a class="headerlink" href="#interval-3-29-114-aka-13-01-07-04" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary_3</span> <span class="o">=</span> <span class="n">getExact</span><span class="p">(</span><span class="s1">&#39;01-13&#39;</span><span class="p">,</span><span class="s1">&#39;04-07&#39;</span><span class="p">,</span><span class="n">depth</span><span class="p">)</span>
+
+<span class="n">runs_s</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">date_pair</span> <span class="o">=</span> <span class="s2">&quot;29_114&quot;</span>
+<span class="n">interval1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;01-05&quot;</span><span class="p">,</span><span class="s2">&quot;01-20&quot;</span><span class="p">]</span>
+<span class="n">interval2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;03-30&quot;</span><span class="p">,</span><span class="s2">&quot;04-15&quot;</span><span class="p">]</span>
+<span class="n">year</span> <span class="o">=</span> <span class="mi">1979</span>
+<span class="n">new_stable</span> <span class="o">=</span> <span class="n">runStable</span><span class="p">(</span><span class="n">runs_s</span><span class="p">,</span><span class="n">interval1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">interval1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">interval2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">interval2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">year</span><span class="p">,</span><span class="n">depth</span><span class="p">)</span>
+
+<span class="n">df1</span> <span class="o">=</span> <span class="n">getOutputsPD</span><span class="p">()</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="n">getOutputsDate</span><span class="p">()</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="n">getDates</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span><span class="n">df1</span><span class="p">)</span>
+<span class="n">stats</span> <span class="o">=</span> <span class="n">getStatsRuns</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span><span class="n">dates</span><span class="p">)</span>
+<span class="n">getDays</span><span class="p">(</span><span class="n">stats</span><span class="p">)</span>
+<span class="n">getStatsSeasons</span><span class="p">(</span><span class="n">df1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="interval-4-59-144-aka-02-12-07-05">
+<h1>Interval 4 (59,144) AKA (02-12, 07-05)<a class="headerlink" href="#interval-4-59-144-aka-02-12-07-05" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary_4</span> <span class="o">=</span> <span class="n">getExact</span><span class="p">(</span><span class="s1">&#39;02-12&#39;</span><span class="p">,</span><span class="s1">&#39;05-07&#39;</span><span class="p">,</span><span class="n">depth</span><span class="p">)</span>
+<span class="n">runs_s</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">date_pair</span> <span class="o">=</span> <span class="s2">&quot;59_144&quot;</span>
+<span class="n">interval1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;02-04&quot;</span><span class="p">,</span><span class="s2">&quot;02-20&quot;</span><span class="p">]</span>
+<span class="n">interval2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;04-29&quot;</span><span class="p">,</span><span class="s2">&quot;05-15&quot;</span><span class="p">]</span>
+<span class="n">year</span> <span class="o">=</span> <span class="mi">1979</span>
+<span class="n">new_stable</span> <span class="o">=</span> <span class="n">runStable</span><span class="p">(</span><span class="n">runs_s</span><span class="p">,</span><span class="n">interval1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">interval1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">interval2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">interval2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">year</span><span class="p">,</span><span class="n">depth</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="interval-5-114-144-aka-04-20-07-05">
+<h1>Interval 5 (114,144) AKA (04-20, 07-05)<a class="headerlink" href="#interval-5-114-144-aka-04-20-07-05" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary_5</span> <span class="o">=</span> <span class="n">getExact</span><span class="p">(</span><span class="s1">&#39;04-20&#39;</span><span class="p">,</span><span class="s1">&#39;05-07&#39;</span><span class="p">,</span><span class="n">depth</span><span class="p">)</span>
+
+<span class="n">runs_s</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">date_pair</span> <span class="o">=</span> <span class="s2">&quot;114_144&quot;</span>
+<span class="n">interval1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;03-30&quot;</span><span class="p">,</span><span class="s2">&quot;04-15&quot;</span><span class="p">]</span>
+<span class="n">interval2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;04-26&quot;</span><span class="p">,</span><span class="s2">&quot;05-15&quot;</span><span class="p">]</span>
+<span class="n">year</span> <span class="o">=</span> <span class="mi">1979</span>
+<span class="n">new_stable</span> <span class="o">=</span> <span class="n">runStable</span><span class="p">(</span><span class="n">runs_s</span><span class="p">,</span><span class="n">interval1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">interval1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">interval2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">interval2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">year</span><span class="p">,</span><span class="n">depth</span><span class="p">)</span>
+
+<span class="n">df1</span> <span class="o">=</span> <span class="n">getOutputsPD</span><span class="p">()</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="n">getOutputsDate</span><span class="p">()</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="n">getDates</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span><span class="n">df1</span><span class="p">)</span>
+<span class="n">stats</span> <span class="o">=</span> <span class="n">getStatsRuns</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span><span class="n">dates</span><span class="p">)</span>
+<span class="n">getDays</span><span class="p">(</span><span class="n">stats</span><span class="p">)</span>
+<span class="n">getStatsSeasons</span><span class="p">(</span><span class="n">df1</span><span class="p">)</span>
+
+<span class="n">mydfs</span> <span class="o">=</span> <span class="p">[</span><span class="n">summary_1</span><span class="p">,</span><span class="n">summary_2</span><span class="p">,</span><span class="n">summary_3</span><span class="p">,</span><span class="n">summary_4</span><span class="p">,</span><span class="n">summary_5</span><span class="p">]</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;summary_1&#39;</span><span class="p">,</span><span class="s1">&#39;summary_2&#39;</span><span class="p">,</span><span class="s1">&#39;summary_3&#39;</span><span class="p">,</span><span class="s1">&#39;summary_4&#39;</span><span class="p">,</span><span class="s1">&#39;summary_5&#39;</span><span class="p">]</span>
+<span class="n">stacked_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+  <span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">names</span> <span class="o">=</span> <span class="n">names</span><span class="p">)</span> <span class="k">for</span> <span class="n">df</span><span class="p">,</span> <span class="n">names</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">mydfs</span><span class="p">,</span> <span class="n">names</span><span class="p">)])</span>
+<span class="n">stacked_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">F</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datadir</span><span class="si">}</span><span class="s2">/exact_</span><span class="si">{</span><span class="n">depth</span><span class="si">}</span><span class="s2">.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">getExact_</span><span class="p">(</span><span class="n">date1</span><span class="p">,</span><span class="n">date2</span><span class="p">,</span><span class="n">depth</span><span class="p">):</span>
+    <span class="n">interval</span> <span class="o">=</span> <span class="n">runExact_</span><span class="p">(</span><span class="n">date1</span><span class="p">,</span><span class="n">date2</span><span class="p">,</span><span class="mi">1979</span><span class="p">,</span><span class="n">depth</span><span class="p">)</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="n">interval</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Yield (tonne/ha)&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;var&#39;</span><span class="p">],</span> 
+                            <span class="s1">&#39;biomass&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;var&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;Es&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;var&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;harvest_index&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;var&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;canopy_cover&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;var&#39;</span><span class="p">]})</span>
+    <span class="n">summary</span><span class="p">[</span><span class="s2">&quot;date1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">date1</span>
+    <span class="n">summary</span><span class="p">[</span><span class="s2">&quot;date2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">date2</span>
+    <span class="k">return</span> <span class="n">summary</span>
+<span class="k">def</span> <span class="nf">runExact_</span><span class="p">(</span><span class="n">first</span><span class="p">,</span><span class="n">second</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">depth</span><span class="p">):</span>
+    <span class="n">newcal</span> <span class="o">=</span> <span class="n">genExactCal</span><span class="p">(</span><span class="n">first</span><span class="p">,</span><span class="n">second</span><span class="p">,</span><span class="n">year</span><span class="p">,</span><span class="n">depth</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">run_model__</span><span class="p">(</span><span class="n">newcal</span><span class="p">)</span>
+    <span class="n">a</span><span class="p">[</span><span class="s1">&#39;first&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">first</span><span class="p">[:</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">first</span><span class="p">[</span><span class="mi">3</span><span class="p">:]))</span>
+    <span class="n">a</span><span class="p">[</span><span class="s1">&#39;second&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">second</span><span class="p">[:</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">second</span><span class="p">[</span><span class="mi">3</span><span class="p">:]))</span>
+    <span class="k">return</span> <span class="n">a</span>
+
+
+<span class="n">summary_1</span> <span class="o">=</span> <span class="n">getExact_</span><span class="p">(</span><span class="s2">&quot;01-13&quot;</span><span class="p">,</span><span class="s2">&quot;02-12&quot;</span><span class="p">,</span><span class="n">depth</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;time_step_counter&#39;, &#39;season_counter&#39;, &#39;dap&#39;, &#39;Wr&#39;, &#39;z_gw&#39;,
+       &#39;surface_storage&#39;, &#39;IrrDay&#39;, &#39;Infl&#39;, &#39;Runoff&#39;, &#39;DeepPerc&#39;, &#39;CR&#39;, &#39;GwIn&#39;,
+       &#39;Es&#39;, &#39;EsPot&#39;, &#39;Tr&#39;, &#39;TrPot&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">depth</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">newcal</span> <span class="o">=</span> <span class="n">genExactCal</span><span class="p">(</span><span class="s2">&quot;01-13&quot;</span><span class="p">,</span><span class="s2">&quot;02-12&quot;</span><span class="p">,</span><span class="mi">1979</span><span class="p">,</span><span class="n">depth</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">AquaCropModel</span><span class="p">(</span><span class="n">sim_start_time</span><span class="o">=</span><span class="n">simStart</span><span class="p">,</span>
+                    <span class="n">sim_end_time</span><span class="o">=</span><span class="n">simEnd</span><span class="p">,</span>
+                    <span class="n">weather_df</span><span class="o">=</span><span class="n">weather_data</span><span class="p">,</span>
+                    <span class="n">soil</span><span class="o">=</span><span class="n">my_soil</span><span class="p">,</span>
+                    <span class="n">crop</span><span class="o">=</span><span class="n">my_crop</span><span class="p">,</span>
+                    <span class="n">initial_water_content</span><span class="o">=</span><span class="n">my_iwc</span><span class="p">,</span>
+                    <span class="n">irrigation_management</span><span class="o">=</span><span class="n">newcal</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">run_model</span><span class="p">(</span><span class="n">till_termination</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># get final stats variables</span>
+<span class="n">final_stats</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">_outputs</span><span class="o">.</span><span class="n">final_stats</span>
+
+<span class="c1"># assemble water flux variables</span>
+<span class="n">water_flux</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">_outputs</span><span class="o">.</span><span class="n">water_flux</span>
+<span class="n">wf</span> <span class="o">=</span> <span class="n">water_flux</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;season_counter&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="c1"># select Surface evaporation, transpiration, deep percolation and capillary rise</span>
+<span class="n">wf</span> <span class="o">=</span> <span class="n">wf</span><span class="p">[[</span><span class="s2">&quot;Es&quot;</span><span class="p">,</span><span class="s2">&quot;Tr&quot;</span><span class="p">,</span><span class="s2">&quot;DeepPerc&quot;</span><span class="p">,</span><span class="s2">&quot;CR&quot;</span><span class="p">]]</span>
+<span class="n">wf</span><span class="p">[</span><span class="s2">&quot;Season&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">wf</span><span class="o">.</span><span class="n">index</span>
+<span class="n">wf</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># assemble crop growth variables</span>
+<span class="n">crop_growth</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">_outputs</span><span class="o">.</span><span class="n">crop_growth</span>
+<span class="n">crop_growth</span><span class="p">[</span><span class="s2">&quot;Season&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">crop_growth</span><span class="p">[</span><span class="s2">&quot;season_counter&quot;</span><span class="p">]</span>
+<span class="n">crops_max</span> <span class="o">=</span> <span class="n">crop_growth</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;season_counter&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">max</span><span class="p">()[[</span><span class="s2">&quot;biomass&quot;</span><span class="p">,</span><span class="s2">&quot;harvest_index&quot;</span><span class="p">,</span><span class="s2">&quot;biomass_ns&quot;</span><span class="p">,</span><span class="s2">&quot;canopy_cover&quot;</span><span class="p">,</span><span class="s2">&quot;Season&quot;</span><span class="p">]]</span>
+
+<span class="n">merged</span> <span class="o">=</span> <span class="n">final_stats</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">wf</span><span class="p">,</span><span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span><span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Season&quot;</span><span class="p">])</span>
+<span class="n">outputs</span> <span class="o">=</span> <span class="n">merged</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">crops_max</span><span class="p">,</span><span class="n">how</span> <span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span><span class="p">[</span><span class="s2">&quot;Season&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary</span> <span class="o">=</span> <span class="n">outputs</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Yield (tonne/ha)&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;var&#39;</span><span class="p">],</span> 
+                            <span class="s1">&#39;biomass&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;var&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;harvest_index&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;var&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;canopy_cover&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;var&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;Es&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;var&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;Tr&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;var&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;DeepPerc&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;var&#39;</span><span class="p">],</span>
+                            <span class="s1">&#39;CR&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;var&#39;</span><span class="p">]})</span>
+<span class="n">summary</span><span class="p">[</span><span class="s2">&quot;date1&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">date1</span>
+<span class="n">summary</span><span class="p">[</span><span class="s2">&quot;date2&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">date2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Yield (tonne/ha)</th>
+      <th>biomass</th>
+      <th>harvest_index</th>
+      <th>canopy_cover</th>
+      <th>Es</th>
+      <th>Tr</th>
+      <th>DeepPerc</th>
+      <th>CR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>mean</th>
+      <td>3.906256</td>
+      <td>1150.400988</td>
+      <td>0.409066</td>
+      <td>0.876268</td>
+      <td>75.122791</td>
+      <td>193.209471</td>
+      <td>8.311147</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.007544</td>
+      <td>170.793869</td>
+      <td>0.035410</td>
+      <td>0.248742</td>
+      <td>56.727813</td>
+      <td>20.174230</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>8.155966</td>
+      <td>1702.209171</td>
+      <td>0.480000</td>
+      <td>0.937807</td>
+      <td>142.297170</td>
+      <td>331.073533</td>
+      <td>104.892036</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>median</th>
+      <td>3.239168</td>
+      <td>1198.767139</td>
+      <td>0.420389</td>
+      <td>0.928947</td>
+      <td>70.590873</td>
+      <td>187.737866</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>var</th>
+      <td>7.190420</td>
+      <td>159789.106191</td>
+      <td>0.008765</td>
+      <td>0.022240</td>
+      <td>352.920058</td>
+      <td>5716.303446</td>
+      <td>624.851920</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;canopy_cover&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;var&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Gabrial Erismann<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
