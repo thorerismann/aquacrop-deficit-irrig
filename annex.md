@@ -1,4 +1,4 @@
-# Annex 1 Figures
+# Annex
 Charts of selected variables relevant to the report.
 
 ## Harvest Index
