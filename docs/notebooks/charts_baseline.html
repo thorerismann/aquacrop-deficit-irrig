@@ -138,8 +138,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../annex1.html">
-   Annex 1 Figures
+  <a class="reference internal" href="../annex.html">
+   Annex
   </a>
  </li>
 </ul>
@@ -394,6 +394,7 @@ title="Print to PDF"
         <span class="n">merged_</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
     <span class="n">merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">merged</span><span class="p">,</span><span class="n">stats_</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">merged_</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">merged_</span><span class="p">,</span><span class="n">seas_</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span><span class="n">axis</span> <span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">merged</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="sa">F</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datadir</span><span class="si">}</span><span class="s2">/all_results_baseline.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
