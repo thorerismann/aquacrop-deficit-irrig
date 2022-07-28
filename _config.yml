@@ -26,7 +26,7 @@ sphinx:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/thorerismann/aqaucrop-ospy-climate
+  url: https://github.com/thorerismann/aquacrop-deficit-irrig
 
 
 # Add GitHub buttons to your book
