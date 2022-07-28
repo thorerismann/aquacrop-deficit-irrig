@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Conclusion &#8212; Plotting the effects of varying irrigation dates and depths using Aquacrop OSPY</title>
+    <title>Conclusion &#8212; Using Aquacrop-OSPY to identfy the effect of varying irrigation quantities and timing on crop yield.</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,8 +50,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Annex" href="annex.html" />
     <link rel="prev" title="Discussion" href="discussion.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -96,7 +99,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Plotting the effects of varying irrigation dates and depths using Aquacrop OSPY</h1>
+      <h1 class="site-logo" id="site-title">Using Aquacrop-OSPY to identfy the effect of varying irrigation quantities and timing on crop yield.</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -108,7 +111,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Finding optimal irrigation dates for deficit irrigation using AQUACROP-OSPY
+                    Abstract
                 </a>
             </li>
         </ul>
@@ -136,6 +139,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Conclusion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="annex.html">
+   Annex
   </a>
  </li>
 </ul>
@@ -319,10 +327,92 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="conclusion">
 <h1>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h1>
-<p>The Aquacrop-OSPY model was implmented and used to generate a large number of runs varying irrigation schedules and depths. The first conlusion of this paper is that as documented in the literature in the introduction, Aquacrop-OSPY is a powerful tool that extends the useability of the standard Aquacrop package, although it dows have some downsides. Due to the recent release of the package, the relatively small number of researchers implementing the package and the reliance on an individual rather than an organization to maintain it leads to some shortcomings, such as the inability to implement sprinkler irrigation rather than targeted irrigation in this report, and a much smaller documentation compared to the original package.</p>
+<p>The Aquacrop-OSPY model was used to generate a large number of runs varying irrigation schedules and depths. The first conlusion of this paper is that as documented in the literature in the introduction, Aquacrop-OSPY is a powerful tool that extends the useability of the standard Aquacrop package, although it does have some downsides. Due to the recent release of the package, the relatively small number of researchers implementing the package and the reliance on an individual rather than an organization to maintain it leads to some shortcomings, such as the inability to implement sprinkler irrigation rather than targeted irrigation in this report, and a much smaller documentation compared to the original package.</p>
 <p>These shortcomings, however are more than made up for by the benefits of the package. As an open source package, it can be run on any operating system. Further, moving to matlab/octave allows users to see and amend the underlying relationships between parameters to keep the Aquacrop package relevant as research into crop modeling expands beyong what the original creators could have seen in the release of Aquacrop 15 years ago. Most importantly, it allows the user to easily generate a large number of runs and compile the data programmatically and create irrigation management functions to optimize irrigation dynamically.</p>
-<p>The second conclusion of this report is that varying the dates and depths of irrigation has significant effects on all crop growth outputs in the aquacrop model. There is a direct relationship between increasing irrigation depth and increasing all crop growth parameters and there is an inverse relationship between irrigation depth and the variance of the crop growth parameters.</p>
-<p>In order to extend this research there are several fruitful avenues. The first would be to amend the irrigation management method within the Aquacrop-OSPY package to easily allow sprinkler and surface flood irrigation, just as most other parameters are easily accessed and modified. A second fruitful avenue would be to perform a properly interpreted statisitical analys in consultation with field experts, for example a multiple regression analysis and fitting a 3d function generated by the data <code class="docutils literal notranslate"><span class="pre">F(irrigation_date_1,</span> <span class="pre">irrigation_date_2)</span> <span class="pre">=</span> <span class="pre">i,</span> <span class="pre">for</span> <span class="pre">all</span> <span class="pre">variables</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">output</span></code>. This report has focused on data generation, visualization and interpretation, and such a statistical analysis would greatly extend the value of this work.</p>
+<p>The second conclusion of this report is that varying the dates and depths of irrigation has significant effects on all crop growth outputs in the aquacrop model. There is a direct relationship between increasing irrigation depth and increasing all crop growth parameters and there is an inverse relationship between irrigation depth and the variance of the crop growth parameters. In adiditon, nearly all of the chosen intervals outperformed the random baseline at a 10 mm depth.</p>
+<p>In order to extend this research there are several fruitful avenues. The first would be to amend the irrigation management method within the Aquacrop-OSPY package to easily allow sprinkler and surface flood irrigation, just as most other parameters are easily accessed and modified. A second fruitful avenue would be to perform a properly interpreted statisitical analys in consultation with field experts, for example a multiple regression analysis and fitting a 3d function generated by the data <span class="math notranslate nohighlight">\(F(irrigation1_i, irrigation2_j) = Yield\)</span> for sampling from the set of all two date combinations. This would allow the identification of local optimums and compare these optimums according to other statistical criteria.</p>
+<div class="docutils container" id="id1">
+<dl class="citation">
+<dt class="label" id="id5"><span class="brackets">Ama22</span></dt>
+<dd><p>T Amara. Heat wave and fires damaging tunisia's grain harvest. <em>Swissinfo.ch</em>, 2022. Accessed: 2022-07-23. <a class="reference external" href="https://doi.org/https://www.swissinfo.ch/eng/heat-wave-and-fires-damaging-tunisia-s-grain-harvest/47706168">doi:https://www.swissinfo.ch/eng/heat-wave-and-fires-damaging-tunisia-s-grain-harvest/47706168</a>.</p>
+</dd>
+<dt class="label" id="id3"><span class="brackets">BZM+18</span></dt>
+<dd><p>H Beck, N Zimmerman, Tim Mcicar, N Vergopolan, A Berg, and E Wood. Present and future köppen-geiger climate classification maps at 1-km resolution. <em>Scientific Data</em>, 2018. <a class="reference external" href="https://doi.org/https://doi.org/10.1038%2Fsdata.2018.214">doi:https://doi.org/10.1038%2Fsdata.2018.214</a>.</p>
+</dd>
+<dt class="label" id="id17"><span class="brackets">DW16</span></dt>
+<dd><p>B. Derrick and P. White. Why welch's test is type i error robust. <em>The Quantitative Methods for Psychology</em>, 12(1):30–38, 2016. URL: <a class="reference external" href="http://www.tqmp.org/RegularArticles/vol12-1/p030/p030.pdf">http://www.tqmp.org/RegularArticles/vol12-1/p030/p030.pdf</a>, <a class="reference external" href="https://doi.org/10.20982/tqmp.12.1.p030">doi:10.20982/tqmp.12.1.p030</a>.</p>
+</dd>
+<dt class="label" id="id2"><span class="brackets">Edi22</span></dt>
+<dd><p>Editors. Tunisia struggles to grow more wheat as ukraine war bites. <em>africanews</em>, 2022. Accessed: 2022-07-23. <a class="reference external" href="https://doi.org/https://www.africanews.com/2022/07/05/tunisia-struggles-to-grow-more-wheat-as-ukraine-war-bites/">doi:https://www.africanews.com/2022/07/05/tunisia-struggles-to-grow-more-wheat-as-ukraine-war-bites/</a>.</p>
+</dd>
+<dt class="label" id="id14"><span class="brackets">FAO22a</span></dt>
+<dd><p>FAO. Aquacrop news. https://grdc.com.au/resources-and-publications/grownotes/crop-agronomy/durum-western/GrowNote-Durum-West-3-Plant-Growth.pdf, 2022. Accessed: 2022-07-26.</p>
+</dd>
+<dt class="label" id="id12"><span class="brackets">FAO22b</span></dt>
+<dd><p>FAO. The importance of ukraine and the russian federation for global agricultural markets and the risks associated with the war in ukrainel. https://www.fao.org/3/cb9013en/cb9013en.pdf, 2022. Accessed: 2022-07-25.</p>
+</dd>
+<dt class="label" id="id11"><span class="brackets">Fos19</span></dt>
+<dd><p>T Foster. Aquacrop-os reference manual. https://www.aquacropos.com/uploads/1/0/9/8/109819842/aquacropos_usermanual_v60a.pdf, 2019. Accessed: 2022-07-25.</p>
+</dd>
+<dt class="label" id="id28"><span class="brackets">FBB+17</span></dt>
+<dd><p>T. Foster, N. Brozović, A.P. Butler, C.M.U. Neale, D. Raes, P. Steduto, E. Fereres, and T.C. Hsiao. Aquacrop-os: an open source version of fao's crop water productivity model. <em>Agricultural Water Management</em>, 181:18–22, 2017. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0378377416304589">https://www.sciencedirect.com/science/article/pii/S0378377416304589</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/j.agwat.2016.11.015">doi:https://doi.org/10.1016/j.agwat.2016.11.015</a>.</p>
+</dd>
+<dt class="label" id="id24"><span class="brackets">GRD22</span></dt>
+<dd><p>GRDC. Grains research and development corporation grow notes: durum section 3: plant growth (phenology). https://grdc.com.au/resources-and-publications/grownotes/crop-agronomy/durum-western/GrowNote-Durum-West-3-Plant-Growth.pdf, 2022. Accessed: 2022-07-25.</p>
+</dd>
+<dt class="label" id="id9"><span class="brackets">Ind22</span></dt>
+<dd><p>IndexMundi. Tunisa wheat production. https://www.indexmundi.com/agriculture/, 2022. Accessed: 2022-07-23.</p>
+</dd>
+<dt class="label" id="id23"><span class="brackets">JAB+17</span></dt>
+<dd><p>James W. Jones, John M. Antle, Bruno Basso, Kenneth J. Boote, Richard T. Conant, Ian Foster, H. Charles J. Godfray, Mario Herrero, Richard E. Howitt, Sander Janssen, Brian A. Keating, Rafael Munoz-Carpena, Cheryl H. Porter, Cynthia Rosenzweig, and Tim R. Wheeler. Brief history of agricultural systems modeling. <em>Agricultural Systems</em>, 155:240–254, 2017. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0308521X16301585">https://www.sciencedirect.com/science/article/pii/S0308521X16301585</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/j.agsy.2016.05.014">doi:https://doi.org/10.1016/j.agsy.2016.05.014</a>.</p>
+</dd>
+<dt class="label" id="id21"><span class="brackets">KDSA20</span></dt>
+<dd><p>Ruud Kassing, Bart De Schutter, and Edo Abraham. Optimal control for precision irrigation of a large-scale plantation. <em>Water Resources Research</em>, 56(10):e2019WR026989, 2020. e2019WR026989 10.1029/2019WR026989. URL: <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2019WR026989">https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2019WR026989</a>, <a class="reference external" href="https://arxiv.org/abs/https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2019WR026989">arXiv:https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2019WR026989</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1029/2019WR026989">doi:https://doi.org/10.1029/2019WR026989</a>.</p>
+</dd>
+<dt class="label" id="id13"><span class="brackets">Kel22</span></dt>
+<dd><p>T Kelly. Aquacrop-ospy. https://aquacropos.github.io/aquacrop/, 2022. Accessed: 2022-07-25.</p>
+</dd>
+<dt class="label" id="id25"><span class="brackets">KF21</span></dt>
+<dd><p>T.D. Kelly and T. Foster. Aquacrop-ospy: bridging the gap between research and practice in crop-water modeling. <em>Agricultural Water Management</em>, 254:106976, 2021. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0378377421002419">https://www.sciencedirect.com/science/article/pii/S0378377421002419</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/j.agwat.2021.106976">doi:https://doi.org/10.1016/j.agwat.2021.106976</a>.</p>
+</dd>
+<dt class="label" id="id22"><span class="brackets">KOSH+20</span></dt>
+<dd><p>Mathias Kuschel-Otárola, Niels Schütze, Eduardo Holzapfel, Alex Godoy-Faúndez, Oleksandr Mialyk, and Diego Rivera. Estimation of yield response factor for each growth stage under local conditions using aquacrop-os. <em>Water</em>, 2020. URL: <a class="reference external" href="https://www.mdpi.com/2073-4441/12/4/1080">https://www.mdpi.com/2073-4441/12/4/1080</a>, <a class="reference external" href="https://doi.org/10.3390/w12041080">doi:10.3390/w12041080</a>.</p>
+</dd>
+<dt class="label" id="id20"><span class="brackets">LJX+22</span></dt>
+<dd><p>Jingyu Lyu, Yanan Jiang, Chao Xu, Yujun Liu, Zhenhui Su, Jianchao Liu, and Jianqiang He. Multi-objective winter wheat irrigation strategies optimization based on coupling aquacrop-ospy and nsga-iii: a case study in yangling, china. <em>Science of The Total Environment</em>, 843:157104, 2022. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0048969722042012">https://www.sciencedirect.com/science/article/pii/S0048969722042012</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/j.scitotenv.2022.157104">doi:https://doi.org/10.1016/j.scitotenv.2022.157104</a>.</p>
+</dd>
+<dt class="label" id="id19"><span class="brackets">MSBH22</span></dt>
+<dd><p>O. Mialyk, J. F. Schyns, M. J. Booij, and R. J. Hogeboom. Historical simulation of maize water footprints with a new global gridded crop model acea. <em>Hydrology and Earth System Sciences</em>, 26(4):923–940, 2022. URL: <a class="reference external" href="https://hess.copernicus.org/articles/26/923/2022/">https://hess.copernicus.org/articles/26/923/2022/</a>, <a class="reference external" href="https://doi.org/10.5194/hess-26-923-2022">doi:10.5194/hess-26-923-2022</a>.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets">OfEC22</span></dt>
+<dd><p>OEC Organization for Economic Cooperation. Wheat in tunisia. https://oec.world/en/profile/bilateral-product/wheat/reporter/tun#subnational-data, 2022. Accessed: 2022-07-23.</p>
+</dd>
+<dt class="label" id="id26"><span class="brackets">SAN+20</span></dt>
+<dd><p>Erika Sabella, Alessio Aprile, Carmine Negro, Francesca Nicolì, Eliana Nutricati, Marzia Vergine, Andrea Luvisi, and Luigi De Bellis. Impact of climate change on durum wheat yield. <em>Agronomy</em>, 10:, 06 2020. <a class="reference external" href="https://doi.org/10.3390/agronomy10060793">doi:10.3390/agronomy10060793</a>.</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets">SA17</span></dt>
+<dd><p>G.D. Schaible and M.P. Aillery. Chapter 2.1.1 - challenges for us irrigated agriculture in the face of emerging demands and climate change. In Jadwiga R. Ziolkowska and Jeffrey M. Peterson, editors, <em>Competition for Water Resources</em>, pages 44–79. Elsevier, 2017. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/B9780128032374000045">https://www.sciencedirect.com/science/article/pii/B9780128032374000045</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/B978-0-12-803237-4.00004-5">doi:https://doi.org/10.1016/B978-0-12-803237-4.00004-5</a>.</p>
+</dd>
+<dt class="label" id="id27"><span class="brackets">SHRF09</span></dt>
+<dd><p>Pasquale Steduto, Theodore C. Hsiao, Dirk Raes, and Elias Fereres. Aquacrop—the fao crop model to simulate yield response to water: i. concepts and underlying principles. <em>Agronomy Journal</em>, 101(3):426–437, 2009. URL: <a class="reference external" href="https://acsess.onlinelibrary.wiley.com/doi/abs/10.2134/agronj2008.0139s">https://acsess.onlinelibrary.wiley.com/doi/abs/10.2134/agronj2008.0139s</a>, <a class="reference external" href="https://arxiv.org/abs/https://acsess.onlinelibrary.wiley.com/doi/pdf/10.2134/agronj2008.0139s">arXiv:https://acsess.onlinelibrary.wiley.com/doi/pdf/10.2134/agronj2008.0139s</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.2134/agronj2008.0139s">doi:https://doi.org/10.2134/agronj2008.0139s</a>.</p>
+</dd>
+<dt class="label" id="id15"><span class="brackets">UPP+20</span></dt>
+<dd><p>Deepak Upreti, Stefano Pignatti, Simone Pascucci, Massimo Tolomio, Wenjiang Huang, and Raffaele Casa. Bayesian calibration of the aquacrop-os model for durum wheat by assimilation of canopy cover retrieved from venµs satellite data. <em>Remote Sensing</em>, 2020. URL: <a class="reference external" href="https://www.mdpi.com/2072-4292/12/16/2666">https://www.mdpi.com/2072-4292/12/16/2666</a>, <a class="reference external" href="https://doi.org/10.3390/rs12162666">doi:10.3390/rs12162666</a>.</p>
+</dd>
+<dt class="label" id="id18"><span class="brackets">VG22</span></dt>
+<dd><p>Astrid Vannoppen and Anne Gobin. Estimating yield from ndvi, weather data, and soil water depletion for sugar beet and potato in northern belgium. <em>Water</em>, 2022. URL: <a class="reference external" href="https://www.mdpi.com/2073-4441/14/8/1188">https://www.mdpi.com/2073-4441/14/8/1188</a>, <a class="reference external" href="https://doi.org/10.3390/w14081188">doi:10.3390/w14081188</a>.</p>
+</dd>
+<dt class="label" id="id7"><span class="brackets">Wor22a</span></dt>
+<dd><p>WorldBank. World bank tunisia climate data portal. https://climateknowledgeportal.worldbank.org/country/tunisia/climate-data-historical, 2022. Accessed: 2022-07-23.</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets">Wor22b</span></dt>
+<dd><p>WorldBank. World bank tunisia development indicators. https://databank.worldbank.org/reports, 2022. Accessed: 2022-07-23.</p>
+</dd>
+<dt class="label" id="id16"><span class="brackets">ZSLC19</span></dt>
+<dd><p>T Zhang, J Su, C Liu, and W Chen. Integration of calibration and forcing methods for predicting timely crop states by using aquacrop-os model&quot;. <em>Loughborough University Conference Contribution</em>, 11 2019. URL: <a class="reference external" href="https://repository.lboro.ac.uk/articles/conference_contribution/Integration_of_calibration_and_forcing_methods_for_predicting_timely_crop_states_by_using_AquaCrop-OS_model/10319018&quot;">https://repository.lboro.ac.uk/articles/conference_contribution/Integration_of_calibration_and_forcing_methods_for_predicting_timely_crop_states_by_using_AquaCrop-OS_model/10319018&quot;</a>.</p>
+</dd>
+</dl>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -358,6 +448,13 @@ title="Print to PDF"
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Discussion</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="annex.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Annex</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>

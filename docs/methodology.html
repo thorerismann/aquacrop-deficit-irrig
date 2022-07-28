@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Methodology &#8212; Plotting the effects of varying irrigation dates and depths using Aquacrop OSPY</title>
+    <title>Methodology &#8212; Using Aquacrop-OSPY to identfy the effect of varying irrigation quantities and timing on crop yield.</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -97,7 +97,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Plotting the effects of varying irrigation dates and depths using Aquacrop OSPY</h1>
+      <h1 class="site-logo" id="site-title">Using Aquacrop-OSPY to identfy the effect of varying irrigation quantities and timing on crop yield.</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -372,12 +372,12 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="methodology">
 <h1>Methodology<a class="headerlink" href="#methodology" title="Permalink to this headline">#</a></h1>
-<p>The goal of this report is to leverage the flexibility and power of the AquaCrop-OSPY framework to eficiently generate a lare number of model runs and perform an initial statistical analysis of the results. More specifically, the Aquacrop-OSPY version number 2.2 was used to test the effect of changing the timing of irrigation dates on different measures of crop productivity and water efficiency for growing Winter Wheat in Tunisia. All of the code to generate the results has been extensively commented and can be found in the notebooks folder of the accompanying github repository. All of the data for the output and the figures used in this report can also be found in accompanying GitHub repository in their respective folders.</p>
+<p>Aquacrop-OSPY version 2.2 was used to test the effect of changing the timing of irrigation dates on different measures of crop productivity and water efficiency for growing Winter Wheat in Tunisia. All of the code to generate the results has been extensively commented and can be found in the notebooks folder of the accompanying GitHub repository. All of the data for the output and the figures used in this report can also be found in accompanying GitHub repository in their respective folders.</p>
 <section id="model-and-parameterization">
 <h2>Model and Parameterization<a class="headerlink" href="#model-and-parameterization" title="Permalink to this headline">#</a></h2>
-<p>The constant parameters fed into the model with their accompanying values are listed in the following table and follow Exercise 7.7 of the FAO Handbook.</p>
-<table class="table" id="id1">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">Model parameters</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
+<p>The parameterization of the model follows Exercise 7.7 of the FAO handbook and are listed in the following table <span id="id1">[<a class="reference internal" href="conclusion.html#id12" title="FAO. The importance of ukraine and the russian federation for global agricultural markets and the risks associated with the war in ukrainel. https://www.fao.org/3/cb9013en/cb9013en.pdf, 2022. Accessed: 2022-07-25.">FAO, 2022</a>]</span>. The parameters changed are the irrigation application method and the irrigation depth. Aquacrop-OSPY does not have the Sprinkler irrigation method available in the module as of the writing of this report, and thus targeted irrigation was used. This irrigation method has a  minimum value of 5 mm and a maximum value of 25 mm.</p>
+<table class="table" id="id2">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Model parameters</span><a class="headerlink" href="#id2" title="Permalink to this table">#</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -415,11 +415,17 @@ title="Print to PDF"
 <tr class="row-even"><td><p>Planting &amp; First Irrigation Date</p></td>
 <td><p>12-15-YYYY (December 15th)</p></td>
 </tr>
+<tr class="row-odd"><td><p>Irrigation application method</p></td>
+<td><p>Direct/Targeted/Localized irrigation</p></td>
+</tr>
+<tr class="row-even"><td><p>Irrigation depth</p></td>
+<td><p>5mm, 10mm, 15mm, 20mm, 25mm</p></td>
+</tr>
 </tbody>
 </table>
-<p>The effects of changing two parameters were tested in this report, namely the depth of irrigation and the timing of irrigation application. The different irrigation depths tested were 5mm, 10mm, 15mm, 20mm, and 25 mm, spanning the allowed values in the Aquacrop system for localized irrigation at any one time, the default irrigation application method for Aquacrop-OSPY. In each season the crop was planted on December 15th and irrigated immediately. The second and third irrigation dates were randomly chosen from subsequent intervals in the growing season, according to different stages in winter wheat’s phenology. The intervals chosen for testing and the corresponding phenological stage are given in the below table:</p>
-<table class="table" id="id2">
-<caption><span class="caption-number">Table 2 </span><span class="caption-text">Intervals tested</span><a class="headerlink" href="#id2" title="Permalink to this table">#</a></caption>
+<p>The effects of changing two parameters were tested in this report, namely the depth of irrigation and the timing of irrigation application. The different irrigation depths tested were 5mm, 10mm, 15mm, 20mm, and 25 mm, spanning the allowed values in the Aquacrop system for localized irrigation at any one time. In each season the crop was planted on December 15th and irrigated immediately so the first irrigation date is fixed. Then a baseline set of results was generated using a first date drawn from the period (15 Jan, 15 Mar)  and a second date drawn from the period (16 Mar, 15 May). Subsequently 6 potential important irrigation times were identified and 8 2-day combinations of these 6 times were chosen for testing. Then, a 16 day interval was constructed around each of these times. 25 days were randomly chosen from a uniform distribution with replacement from each pair of 16 day intervals. The intervals chosen for testing and the corresponding phenological stage are given in the below table:</p>
+<table class="table" id="id3">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Intervals tested</span><a class="headerlink" href="#id3" title="Permalink to this table">#</a></caption>
 <colgroup>
 <col style="width: 20%" />
 <col style="width: 20%" />
@@ -446,7 +452,7 @@ title="Print to PDF"
 <td><p>[01-06,01-21] (day 30)</p></td>
 <td><p>Tillering phase</p></td>
 <td><p>[02-05,02-21] (day 60)</p></td>
-<td><p>Infolorescence emergence</p></td>
+<td><p>Inflorescence emergence</p></td>
 </tr>
 <tr class="row-even"><td><p>Interval 2</p></td>
 <td><p>[01-06,01-21] (day 30)</p></td>
@@ -462,7 +468,7 @@ title="Print to PDF"
 </tr>
 <tr class="row-even"><td><p>Interval 4</p></td>
 <td><p>[02-05,02-21] (day 60)</p></td>
-<td><p>Infolorescence emergence</p></td>
+<td><p>Inflorescence emergence</p></td>
 <td><p>[03-27,04-12] (day 110)</p></td>
 <td><p>Grain filling phase (dough stage)</p></td>
 </tr>
@@ -492,13 +498,13 @@ title="Print to PDF"
 </tr>
 </tbody>
 </table>
-<p>For the first interval pair <code class="docutils literal notranslate"><span class="pre">[15-01,15-03]</span></code> and <code class="docutils literal notranslate"><span class="pre">[16-03,16-05]</span></code> 250 runs were conducted for irrigation at 10 mm and 25 mm depths, for a total of 500 model runs. For each subsequent interval, 20 runs were conducted for each interval at each irrigation depth, also for a total of 500 models runs. A simple algorithm was used to generate the random dates: First, the two desired date intervals were created. Then, the dates were then chosen with replacement from a unifom distribution including the first and last dates of each interval. For comparison the model was run with no irrigation as well.</p>
+<p>For the first interval pair 250 runs were conducted for irrigation at 10 mm and 25 mm depths, for a total of 500 model runs. For each subsequent interval, 25 runs were conducted for each interval at each irrigation depth, for a total of 125 model runs for each interval and 1000 runs in total.</p>
 </section>
 <section id="model-output">
 <h2>Model Output<a class="headerlink" href="#model-output" title="Permalink to this headline">#</a></h2>
 <p>Aquacrop-OSPY yields the same outputs as Aquacrop and are grouped into four categories: <code class="docutils literal notranslate"><span class="pre">final_statistics</span></code>, <code class="docutils literal notranslate"><span class="pre">water_flux</span></code>, <code class="docutils literal notranslate"><span class="pre">water_storage</span></code> and <code class="docutils literal notranslate"><span class="pre">crop_growth</span></code>. The <code class="docutils literal notranslate"><span class="pre">water_storage</span></code> outputs pertain to the storage of moisture in each layer of soil and were not used in this analysis. The data presented in this report result from aggregating <code class="docutils literal notranslate"><span class="pre">water_flux</span></code> outputs according to their cumulative sum over the season and aggregating <code class="docutils literal notranslate"><span class="pre">crop_growth</span></code> outputs according to the seasonal maximum. Summary statistics (the variance, mean, median maximum and minimum) are then computed for each run of the model and used for the results section.</p>
-<table class="table" id="id3">
-<caption><span class="caption-number">Table 3 </span><span class="caption-text">Variable aggregation</span><a class="headerlink" href="#id3" title="Permalink to this table">#</a></caption>
+<table class="table" id="id4">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Variable aggregation</span><a class="headerlink" href="#id4" title="Permalink to this table">#</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -515,14 +521,14 @@ title="Print to PDF"
 <tr class="row-odd"><td><p>Biomass (crop_growth)</p></td>
 <td><p>Maximum value for each season</p></td>
 </tr>
-<tr class="row-even"><td><p>Canopy Cover (grop_growth)</p></td>
+<tr class="row-even"><td><p>Canopy Cover (crop_growth)</p></td>
 <td><p>Maximum value for each season</p></td>
 </tr>
-<tr class="row-odd"><td><p>Harvest Index (grop_growth)</p></td>
+<tr class="row-odd"><td><p>Harvest Index (crop_growth)</p></td>
 <td><p>Maximum value for each season</p></td>
 </tr>
 <tr class="row-even"><td><p>Surface Evaporation (water_flux)</p></td>
-<td><p>Cumulative sum for each seasonm</p></td>
+<td><p>Cumulative sum for each season</p></td>
 </tr>
 <tr class="row-odd"><td><p>Transpiration (water_flux)</p></td>
 <td><p>Cumulative sum for each season</p></td>

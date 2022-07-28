@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Notebook to generate charts for the smaller date intervals used in the report. &#8212; Plotting the effects of varying irrigation dates and depths using Aquacrop OSPY</title>
+    <title>Notebook to generate charts for the smaller date intervals used in the report. &#8212; Using Aquacrop-OSPY to identfy the effect of varying irrigation quantities and timing on crop yield.</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -95,7 +95,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="../_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Plotting the effects of varying irrigation dates and depths using Aquacrop OSPY</h1>
+      <h1 class="site-logo" id="site-title">Using Aquacrop-OSPY to identfy the effect of varying irrigation quantities and timing on crop yield.</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -436,6 +436,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/charts_intervals_3_0.png" src="../_images/charts_intervals_3_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -471,6 +474,156 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Yield (tonne/ha)_mean</th>
+      <th>irrigation_1</th>
+      <th>irrigation_2</th>
+      <th>depth</th>
+      <th>interval</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.117229</td>
+      <td>36</td>
+      <td>103</td>
+      <td>25</td>
+      <td>30_110</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5.072303</td>
+      <td>24</td>
+      <td>106</td>
+      <td>25</td>
+      <td>30_110</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5.067756</td>
+      <td>52</td>
+      <td>103</td>
+      <td>25</td>
+      <td>60_110</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5.057621</td>
+      <td>53</td>
+      <td>103</td>
+      <td>25</td>
+      <td>60_110</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.044734</td>
+      <td>84</td>
+      <td>104</td>
+      <td>25</td>
+      <td>80_110</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5.043243</td>
+      <td>88</td>
+      <td>103</td>
+      <td>25</td>
+      <td>80_110</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>5.037315</td>
+      <td>32</td>
+      <td>106</td>
+      <td>25</td>
+      <td>30_110</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>5.029205</td>
+      <td>84</td>
+      <td>105</td>
+      <td>25</td>
+      <td>80_110</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>5.028352</td>
+      <td>84</td>
+      <td>103</td>
+      <td>25</td>
+      <td>80_110</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>5.027057</td>
+      <td>106</td>
+      <td>139</td>
+      <td>25</td>
+      <td>110_140</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>5.025221</td>
+      <td>25</td>
+      <td>107</td>
+      <td>25</td>
+      <td>30_110</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>5.024927</td>
+      <td>88</td>
+      <td>107</td>
+      <td>25</td>
+      <td>80_110</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>5.023869</td>
+      <td>39</td>
+      <td>106</td>
+      <td>25</td>
+      <td>30_110</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>5.021611</td>
+      <td>66</td>
+      <td>104</td>
+      <td>25</td>
+      <td>60_110</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>5.010847</td>
+      <td>82</td>
+      <td>106</td>
+      <td>25</td>
+      <td>80_110</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -521,31 +674,6 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">baseline</span><span class="o">.</span><span class="n">columns</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Unnamed: 0&#39;, &#39;index&#39;, &#39;Unnamed: 0.1&#39;, &#39;run&#39;, &#39;Yield (tonne/ha)_mean&#39;,
-       &#39;Yield (tonne/ha)_min&#39;, &#39;Yield (tonne/ha)_max&#39;,
-       &#39;Yield (tonne/ha)_median&#39;, &#39;Yield (tonne/ha)_var&#39;, &#39;biomass_mean&#39;,
-       &#39;biomass_min&#39;, &#39;biomass_max&#39;, &#39;biomass_median&#39;, &#39;biomass_var&#39;,
-       &#39;harvest_index_mean&#39;, &#39;harvest_index_min&#39;, &#39;harvest_index_max&#39;,
-       &#39;harvest_index_median&#39;, &#39;harvest_index_var&#39;, &#39;canopy_cover_mean&#39;,
-       &#39;canopy_cover_min&#39;, &#39;canopy_cover_max&#39;, &#39;canopy_cover_median&#39;,
-       &#39;canopy_cover_var&#39;, &#39;Es_mean&#39;, &#39;Es_min&#39;, &#39;Es_max&#39;, &#39;Es_median&#39;,
-       &#39;Es_var&#39;, &#39;Tr_mean&#39;, &#39;Tr_min&#39;, &#39;Tr_max&#39;, &#39;Tr_median&#39;, &#39;Tr_var&#39;,
-       &#39;DeepPerc_mean&#39;, &#39;DeepPerc_min&#39;, &#39;DeepPerc_max&#39;, &#39;DeepPerc_median&#39;,
-       &#39;DeepPerc_var&#39;, &#39;CR_mean&#39;, &#39;CR_min&#39;, &#39;CR_max&#39;, &#39;CR_median&#39;, &#39;CR_var&#39;,
-       &#39;date_1&#39;, &#39;date_2&#39;, &#39;irrig_1&#39;, &#39;irrig_2&#39;, &#39;irrigation_1&#39;,
-       &#39;irrigation_2&#39;, &#39;depth&#39;],
-      dtype=&#39;object&#39;)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># construct naive t statistic using Welch&#39;s method for each interval versus the baseline.</span>
 <span class="n">baseline</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">F</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datadir</span><span class="si">}</span><span class="s2">/all_results_baseline.csv&quot;</span><span class="p">)</span>
 <span class="n">td_10</span> <span class="o">=</span> <span class="n">baseline</span><span class="p">[</span><span class="n">baseline</span><span class="o">.</span><span class="n">depth</span><span class="o">==</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -563,13 +691,17 @@ title="Print to PDF"
         <span class="n">d</span> <span class="o">=</span> <span class="n">c</span><span class="p">[[</span><span class="s2">&quot;depth&quot;</span><span class="p">,</span><span class="s2">&quot;interval&quot;</span><span class="p">,</span><span class="s2">&quot;Yield (tonne/ha)_mean&quot;</span><span class="p">]]</span>
         <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
             <span class="n">b</span> <span class="o">=</span> <span class="n">ttest_ind</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;Yield (tonne/ha)_mean&#39;</span><span class="p">],</span> <span class="n">td10</span><span class="p">[</span><span class="s1">&#39;Yield (tonne/ha)_mean&#39;</span><span class="p">],</span><span class="n">equal_var</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-            <span class="n">mylist</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">b</span><span class="p">,</span><span class="sa">F</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">])</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">statistic</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">pvalue</span>
+            <span class="n">mylist</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="sa">F</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">])</span>
         <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">25</span><span class="p">:</span>
             <span class="n">b</span> <span class="o">=</span> <span class="n">ttest_ind</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;Yield (tonne/ha)_mean&#39;</span><span class="p">],</span> <span class="n">td25</span><span class="p">[</span><span class="s1">&#39;Yield (tonne/ha)_mean&#39;</span><span class="p">],</span><span class="n">equal_var</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-            <span class="n">mylist</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">b</span><span class="p">,</span><span class="sa">F</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">])</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">statistic</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">pvalue</span>
+            <span class="n">mylist</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="sa">F</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s1">-</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">])</span>
 
             <span class="n">results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
-<span class="n">test_results</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="n">results</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="s1">&#39;Test Statistic, P-Value&#39;</span><span class="p">,</span><span class="n">results</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span><span class="s1">&#39;interval - depth&#39;</span><span class="p">})</span>
+<span class="n">test_results</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="n">results</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="s1">&#39;Test Statistic&#39;</span><span class="p">,</span><span class="n">results</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="s1">&#39;P_Value&#39;</span><span class="p">,</span><span class="n">results</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span><span class="s1">&#39;interval - depth&#39;</span><span class="p">})</span>
 <span class="n">test_results</span>
 </pre></div>
 </div>
@@ -593,94 +725,284 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Test Statistic, P-Value</th>
+      <th>Test Statistic</th>
+      <th>P_Value</th>
       <th>interval - depth</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>0</td>
-      <td>(-0.14925941492076303, 0.8815961150926866)</td>
+      <th>0</th>
+      <td>-0.149259</td>
+      <td>8.815961e-01</td>
       <td>30_60-10</td>
     </tr>
     <tr>
-      <td>1</td>
-      <td>(8.62479086905845, 5.117457198073287e-14)</td>
+      <th>1</th>
+      <td>8.624791</td>
+      <td>5.117457e-14</td>
       <td>30_80-10</td>
     </tr>
     <tr>
-      <td>2</td>
-      <td>(4.96064601868736, 2.374247572817184e-05)</td>
+      <th>2</th>
+      <td>4.960646</td>
+      <td>2.374248e-05</td>
       <td>30_110-10</td>
     </tr>
     <tr>
-      <td>3</td>
-      <td>(-0.7578618380009042, 0.4543729343556355)</td>
+      <th>3</th>
+      <td>-0.757862</td>
+      <td>4.543729e-01</td>
       <td>60_110-10</td>
     </tr>
     <tr>
-      <td>4</td>
-      <td>(-12.059137965747222, 1.1819907447533288e-21)</td>
+      <th>4</th>
+      <td>-12.059138</td>
+      <td>1.181991e-21</td>
       <td>60_130-10</td>
     </tr>
     <tr>
-      <td>5</td>
-      <td>(4.124258372749213, 0.00024489933513373427)</td>
+      <th>5</th>
+      <td>4.124258</td>
+      <td>2.448993e-04</td>
       <td>80_110-10</td>
     </tr>
     <tr>
-      <td>6</td>
-      <td>(-3.7443355118195876, 0.00047294141523656903)</td>
+      <th>6</th>
+      <td>-3.744336</td>
+      <td>4.729414e-04</td>
       <td>80_140-10</td>
     </tr>
     <tr>
-      <td>7</td>
-      <td>(-3.562057437394212, 0.0012813501924429898)</td>
+      <th>7</th>
+      <td>-3.562057</td>
+      <td>1.281350e-03</td>
       <td>110_140-10</td>
     </tr>
     <tr>
-      <td>8</td>
-      <td>(-14.48499911518838, 3.4192615518971323e-33)</td>
+      <th>8</th>
+      <td>-14.484999</td>
+      <td>3.419262e-33</td>
       <td>30_60-25</td>
     </tr>
     <tr>
-      <td>9</td>
-      <td>(-3.7308079299140795, 0.0003522648534320398)</td>
+      <th>9</th>
+      <td>-3.730808</td>
+      <td>3.522649e-04</td>
       <td>30_80-25</td>
     </tr>
     <tr>
-      <td>10</td>
-      <td>(5.224652509901659, 6.928117535741452e-06)</td>
+      <th>10</th>
+      <td>5.224653</td>
+      <td>6.928118e-06</td>
       <td>30_110-25</td>
     </tr>
     <tr>
-      <td>11</td>
-      <td>(3.1300007883618894, 0.003564733911773302)</td>
+      <th>11</th>
+      <td>3.130001</td>
+      <td>3.564734e-03</td>
       <td>60_110-25</td>
     </tr>
     <tr>
-      <td>12</td>
-      <td>(-11.598111653348502, 5.5101610568956444e-24)</td>
+      <th>12</th>
+      <td>-11.598112</td>
+      <td>5.510161e-24</td>
       <td>60_130-25</td>
     </tr>
     <tr>
-      <td>13</td>
-      <td>(6.074014380222124, 5.557050003871093e-07)</td>
+      <th>13</th>
+      <td>6.074014</td>
+      <td>5.557050e-07</td>
       <td>80_110-25</td>
     </tr>
     <tr>
-      <td>14</td>
-      <td>(-5.47696137969493, 9.91433708784473e-07)</td>
+      <th>14</th>
+      <td>-5.476961</td>
+      <td>9.914337e-07</td>
       <td>80_140-25</td>
     </tr>
     <tr>
-      <td>15</td>
-      <td>(4.010955865839601, 0.00025035128426556866)</td>
+      <th>15</th>
+      <td>4.010956</td>
+      <td>2.503513e-04</td>
       <td>110_140-25</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">test_results</span><span class="o">.</span><span class="n">P_Value</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mf">.05</span><span class="p">:</span>
+        <span class="n">mylist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;significant&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">mylist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;not significant&quot;</span><span class="p">)</span>
+<span class="n">test_results</span><span class="p">[</span><span class="s2">&quot;significance&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mylist</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_results</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Test Statistic</th>
+      <th>P_Value</th>
+      <th>interval - depth</th>
+      <th>significance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.149259</td>
+      <td>8.815961e-01</td>
+      <td>30_60-10</td>
+      <td>not significant</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>8.624791</td>
+      <td>5.117457e-14</td>
+      <td>30_80-10</td>
+      <td>significant</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.960646</td>
+      <td>2.374248e-05</td>
+      <td>30_110-10</td>
+      <td>significant</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.757862</td>
+      <td>4.543729e-01</td>
+      <td>60_110-10</td>
+      <td>not significant</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-12.059138</td>
+      <td>1.181991e-21</td>
+      <td>60_130-10</td>
+      <td>significant</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>4.124258</td>
+      <td>2.448993e-04</td>
+      <td>80_110-10</td>
+      <td>significant</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-3.744336</td>
+      <td>4.729414e-04</td>
+      <td>80_140-10</td>
+      <td>significant</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-3.562057</td>
+      <td>1.281350e-03</td>
+      <td>110_140-10</td>
+      <td>significant</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>-14.484999</td>
+      <td>3.419262e-33</td>
+      <td>30_60-25</td>
+      <td>significant</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-3.730808</td>
+      <td>3.522649e-04</td>
+      <td>30_80-25</td>
+      <td>significant</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>5.224653</td>
+      <td>6.928118e-06</td>
+      <td>30_110-25</td>
+      <td>significant</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>3.130001</td>
+      <td>3.564734e-03</td>
+      <td>60_110-25</td>
+      <td>significant</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>-11.598112</td>
+      <td>5.510161e-24</td>
+      <td>60_130-25</td>
+      <td>significant</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>6.074014</td>
+      <td>5.557050e-07</td>
+      <td>80_110-25</td>
+      <td>significant</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>-5.476961</td>
+      <td>9.914337e-07</td>
+      <td>80_140-25</td>
+      <td>significant</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>4.010956</td>
+      <td>2.503513e-04</td>
+      <td>110_140-25</td>
+      <td>significant</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">test_results</span><span class="o">.</span><span class="n">at</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Test Statistic, P-Value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">pvalue</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8815961150926865
+</pre></div>
+</div>
+</div>
 </div>
 <p>The rest of this code is generating the same charts over and over for each variable in question.</p>
 <div class="cell docutils container">
@@ -713,6 +1035,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/charts_intervals_12_0.png" src="../_images/charts_intervals_12_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -743,6 +1068,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/charts_intervals_13_0.png" src="../_images/charts_intervals_13_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -772,6 +1100,9 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">F</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">figdir</span><span class="si">}</span><span class="s2">/canopy_cover_int&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/charts_intervals_14_0.png" src="../_images/charts_intervals_14_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -804,6 +1135,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/charts_intervals_15_0.png" src="../_images/charts_intervals_15_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -835,36 +1169,8 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;darkgrid&#39;</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
-<span class="n">data_</span> <span class="o">=</span> <span class="n">merged</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">data_</span><span class="p">[[</span><span class="s1">&#39;DeepPerc_mean&#39;</span><span class="p">,</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="s1">&#39;interval&#39;</span><span class="p">]]</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;interval&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;DeepPerc_mean&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">group_mean</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;interval&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;DeepPerc_mean&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Mean&#39;</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">data_</span><span class="p">[[</span><span class="s1">&#39;DeepPerc_max&#39;</span><span class="p">,</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="s1">&#39;interval&#39;</span><span class="p">]]</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;interval&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;DeepPerc_max&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">group_max</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;interval&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;DeepPerc_max&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Maximum&#39;</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">data_</span><span class="p">[[</span><span class="s1">&#39;DeepPerc_var&#39;</span><span class="p">,</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="s1">&#39;interval&#39;</span><span class="p">]]</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;interval&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;DeepPerc_var&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">group_var</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;interval&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;DeepPerc_var&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Variance&#39;</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">data_</span><span class="p">[[</span><span class="s1">&#39;DeepPerc_min&#39;</span><span class="p">,</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="s1">&#39;interval&#39;</span><span class="p">]]</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;interval&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;DeepPerc_min&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">group_min</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;interval&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;DeepPerc_min&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Minimum&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">F</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">figdir</span><span class="si">}</span><span class="s2">/DeepPerc_int&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
+<div class="cell_output docutils container">
+<img alt="../_images/charts_intervals_16_0.png" src="../_images/charts_intervals_16_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -896,6 +1202,43 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">F</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">figdir</span><span class="si">}</span><span class="s2">/DeepPerc_int&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/charts_intervals_17_0.png" src="../_images/charts_intervals_17_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;darkgrid&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+<span class="n">data_</span> <span class="o">=</span> <span class="n">merged</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data_</span><span class="p">[[</span><span class="s1">&#39;DeepPerc_mean&#39;</span><span class="p">,</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="s1">&#39;interval&#39;</span><span class="p">]]</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;interval&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;DeepPerc_mean&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">group_mean</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;interval&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;DeepPerc_mean&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Mean&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data_</span><span class="p">[[</span><span class="s1">&#39;DeepPerc_max&#39;</span><span class="p">,</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="s1">&#39;interval&#39;</span><span class="p">]]</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;interval&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;DeepPerc_max&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">group_max</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;interval&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;DeepPerc_max&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Maximum&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data_</span><span class="p">[[</span><span class="s1">&#39;DeepPerc_var&#39;</span><span class="p">,</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="s1">&#39;interval&#39;</span><span class="p">]]</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;interval&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;DeepPerc_var&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">group_var</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;interval&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;DeepPerc_var&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Variance&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data_</span><span class="p">[[</span><span class="s1">&#39;DeepPerc_min&#39;</span><span class="p">,</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="s1">&#39;interval&#39;</span><span class="p">]]</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;interval&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;DeepPerc_min&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">group_min</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;interval&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;DeepPerc_min&#39;</span><span class="p">,</span><span class="n">hue</span><span class="o">=</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Minimum&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">F</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">figdir</span><span class="si">}</span><span class="s2">/DeepPerc_int&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/charts_intervals_18_0.png" src="../_images/charts_intervals_18_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -927,6 +1270,9 @@ title="Print to PDF"
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">F</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">figdir</span><span class="si">}</span><span class="s2">/harvest_index_int&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/charts_intervals_19_0.png" src="../_images/charts_intervals_19_0.png" />
 </div>
 </div>
 </section>

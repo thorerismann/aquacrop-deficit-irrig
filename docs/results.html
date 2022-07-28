@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Results &#8212; Plotting the effects of varying irrigation dates and depths using Aquacrop OSPY</title>
+    <title>Results &#8212; Using Aquacrop-OSPY to identfy the effect of varying irrigation quantities and timing on crop yield.</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Discussion" href="discussion.html" />
@@ -97,7 +99,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Plotting the effects of varying irrigation dates and depths using Aquacrop OSPY</h1>
+      <h1 class="site-logo" id="site-title">Using Aquacrop-OSPY to identfy the effect of varying irrigation quantities and timing on crop yield.</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -322,13 +324,18 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#seasonal-values">
-   Seasonal values
+  <a class="reference internal nav-link" href="#aggregation-across-growing-season">
+   Aggregation across growing season
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#yield">
    Yield
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#significance-testing">
+   Significance testing
   </a>
  </li>
 </ul>
@@ -351,13 +358,18 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#seasonal-values">
-   Seasonal values
+  <a class="reference internal nav-link" href="#aggregation-across-growing-season">
+   Aggregation across growing season
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#yield">
    Yield
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#significance-testing">
+   Significance testing
   </a>
  </li>
 </ul>
@@ -372,11 +384,10 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="results">
 <h1>Results<a class="headerlink" href="#results" title="Permalink to this headline">#</a></h1>
-<p>The model results demonstrate that</p>
-<p>The most important measure of crop productivity in In the subsequent discussion “yield” refers to the Aquacrop output Yield (tonnes/hectare), unless otherwise specified. Unless otherwise specified, all days are given in days since planting, with the planting date of December 15th.</p>
-<section id="seasonal-values">
-<h2>Seasonal values<a class="headerlink" href="#seasonal-values" title="Permalink to this headline">#</a></h2>
-<p>There is a large variation across growing seasons regardless of the irrigation depths and schedules as the followig charts show. The drops in production seen in the actual values plotted in the introduction are correspond to the drops in each image.</p>
+<p>The model results demonstrate that there is a significant impact on yield and all other parameters from varying irrigation depths and times. This section focuses on presenting the effects on the Yield (tonnes/ha) output of the Aquacrop model, but a number of results pertaining to crop growth and water efficiency and storage are mentioned and the results are plotted and available in the annex. In the subsequent discussion “yield” refers to the Aquacrop output Yield (tonnes/hectare), unless otherwise specified. Days are given in days since planting, with the initial planting date constant at December 15th.</p>
+<section id="aggregation-across-growing-season">
+<h2>Aggregation across growing season<a class="headerlink" href="#aggregation-across-growing-season" title="Permalink to this headline">#</a></h2>
+<p>There is a large variation across growing seasons regardless of the irrigation depths and schedules as the following charts show. The dramatic drops in production seen in the actual yields of wheat (including both <em>Triticum aestivus</em> and <em>Triticum durum</em>) plotted in the introduction correspond to the model quite well.</p>
 <p>Across seasons, we see that biomass, yield and transpiration are strongly positively correlated. Surface evaporation has a strong negative correlation with yield and biomass, clearly increasing during drought years and decreasing during bumper years.</p>
 <figure class="align-default" id="baseline-season">
 <a class="reference internal image-reference" href="_images/seasonal.png"><img alt="_images/seasonal.png" src="_images/seasonal.png" style="height: 450px;" /></a>
@@ -384,7 +395,7 @@ title="Print to PDF"
 <p><span class="caption-number">Fig. 2 </span><span class="caption-text">Aggregation by growing season of 250 runs of 10 mm and 25 mm irrigation depths with irrigation dates chosen randomly from the intervals [15 Jan,15 Mar] and [16 Mar,15 May]</span><a class="headerlink" href="#baseline-season" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>The mean yield converges for all intervals and all depths during seaons with bumper crops. During seasons with severe drought causing drops in yield, increased irrigation clearly improves the yield and there are small differences visible among the different irrigation intervals.</p>
+<p>The mean yield converges for all 8 tested intervals and all 5 depths during seasons with bumper crops. During seasons with severe drought causing drops in yield, increased irrigation clearly improves the yield and there are small differences visible among the different irrigation intervals.</p>
 <figure class="align-default" id="interval-season">
 <a class="reference internal image-reference" href="_images/season_.png"><img alt="_images/season_.png" src="_images/season_.png" style="height: 450px;" /></a>
 <figcaption>
@@ -394,28 +405,27 @@ title="Print to PDF"
 </section>
 <section id="yield">
 <h2>Yield<a class="headerlink" href="#yield" title="Permalink to this headline">#</a></h2>
-<p>The most important measure of crop productivity is Yield (tonnes/hectare).</p>
-<p>The below regression plots of yield versus the first and second irrigation day over the baseline set of runs demonstrate that at every irrigation schedule, 25mm of irrigation provides a significantly higher yield than 10 mm. Given the constraints imposed by the randomization method chosen, the following conclusions about the irrigation dates can be taken from the data:</p>
+<p>The below regression plots of yield versus the first and second irrigation day using the baseline set of runs demonstrate that at every irrigation schedule, 25mm of irrigation provides a significantly higher yield than 10 mm. As can be seen from the chart, even the worst performing irrigation dates at 25 mm depth have much higher yields than irrigation times at 10 mm depths. Given the constraints imposed by the randomization method chosen, the following conclusions about the irrigation dates can be taken from visually inspecting the data:</p>
 <ul class="simple">
-<li><p>There are local optimums around day 40 and day 90 for irrigation 1</p></li>
+<li><p>There are local optimums around day 35 and day 90 for irrigation 1</p></li>
 <li><p>There is a local optimum around day 105 for irrigation 2</p></li>
 </ul>
 <figure class="align-default" id="baseline-yield">
 <a class="reference internal image-reference" href="_images/reg-plot-yield.png"><img alt="_images/reg-plot-yield.png" src="_images/reg-plot-yield.png" style="height: 450px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Regression plot of 250 runs of 10 mm and 25 mm irrigation depths irrigation dates chosen randomly from the intervals [15 Jan,15 Mar] and [16 Mar,15 May] Top represent Yield against the first irrigation date, Bottom row represents yield versus the second irrigation date. Organge is 25 mm irrigation, blue is 10 mm irrigation.</span><a class="headerlink" href="#baseline-yield" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Regression plot of 250 runs of 10 mm and 25 mm irrigation depths irrigation dates chosen randomly from the intervals [15 Jan, 15 Mar] and [16 Mar, 15 May]. Top represent Yield against the first irrigation date, Bottom row represents yield versus the second irrigation date. Orange is 25 mm irrigation, blue is 10 mm irrigation. Left columns are scatter charts of actual values, right columns values are grouped into 20 bins with the mean represented by the dot and the standard deviation represented by the vertical line for each bin.</span><a class="headerlink" href="#baseline-yield" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Looking at the mean yield in the below figure, we see that increasing the irrigation amount improves mean yield by a relatively constant amount. Further, this effect is more important than the effect of choosing among the 8 irrigation intervals chosen for testing. Nonetheless, the following intervals stand out: 1) day 30/day 110, 2) day 80/day110, and 3) day 110/day 140. The commonality is the irrigation date around during the interval centered around day 110.</p>
+<p>Looking at the mean yield in the below figure, we see that increasing the irrigation amount improves mean yield by a relatively constant amount. Further, this effect is more important than the effect of choosing among the 8 irrigation intervals chosen for testing. Nonetheless, the following intervals stand out: 1) day 30/day 110, 2) day 80/day110, and 3) day 110/day 140. The commonality is the irrigation date around the interval centered around day 110.</p>
 <p>There is an inverse relationship between variance and depth, which comes from the irrigation dates being able to mitigate somewhat the effects of drought on the mean yield. The maximum yield varies less  with both irrigation schedule and irrigation depth (notice the scales are not the same for each chart!) than the mean yield. This suggests that the maximum is more determined by favorable climatic conditions than than the mean yield, and conversely that irrigation management has a stronger effect on the mean than on the maximum under these conditions.</p>
-<p>Finally, the minimum value corresponds to the growing season with the worst drought for each run. Like the maximum, the minimum varies significantly, but less so than the mean. This implies that the seasonal variation in climatic conditions drives the minimum seasonal yield in each run.</p>
+<p>Finally, the minimum value corresponds to the growing season with the worst drought for each run. Like the maximum, the minimum value varies less than the mean, which again implies that the seasonal variation in climatic conditions drives the minimum seasonal yield in each run.</p>
 <figure class="align-default" id="int-yield">
 <a class="reference internal image-reference" href="_images/yield_int.png"><img alt="_images/yield_int.png" src="_images/yield_int.png" style="height: 450px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Different statistics representing the Yield for each chosen interval. The scatter plots represent the actual values for each random date pair, the line represents the mean value in each plot.</span><a class="headerlink" href="#int-yield" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Statistics representing the yield for each tested interval. The dots representing the actual values for each random date pair are stacked by their corresponding interval and colored according to the irrigation depth. The colored lines represents the mean value of each (irrigation depth, irrigation interval).</span><a class="headerlink" href="#int-yield" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>The tables below of the top 15 yield mean yields for the interval runs and the baseline run shows the strong correspondace between the two strategies in identifying an optimum.</p>
+<p>The tables below of the top 15 yield mean yields for the interval runs and the baseline run shows the strong correspondence between the two strategies in identifying an optimum.</p>
 <figure class="align-default" id="baseline-top">
 <a class="reference internal image-reference" href="_images/topbase.png"><img alt="_images/topbase.png" src="_images/topbase.png" style="height: 450px;" /></a>
 <figcaption>
@@ -426,6 +436,26 @@ title="Print to PDF"
 <a class="reference internal image-reference" href="_images/topintervals.png"><img alt="_images/topintervals.png" src="_images/topintervals.png" style="height: 450px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 7 </span><span class="caption-text">Top 15 irrigation date combinations by mean yield across all intervals.</span><a class="headerlink" href="#intervals-top" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="significance-testing">
+<h2>Significance testing<a class="headerlink" href="#significance-testing" title="Permalink to this headline">#</a></h2>
+<p>Finally, a two-sided Welch’s t-test, a variant of the student t-test more robust to Type 1 errors appropriate for comparing means of samples with different sizes and variances, was used to determine if there is a significant difference between the means of each interval and the means of the baseline runs. Since the baseline was only run using 10mm and 25mm depths, only these depths were used in testing the intervals. Welch’s variant is given below:</p>
+<div class="math notranslate nohighlight">
+\[
+t = \Delta\bar{X}/s_\Delta\bar{X} = (\bar{X_1} - \bar{X_2})/\sqrt{s_\bar{X_1}^2 + s_\bar{X_2}^2}
+\]</div>
+<p>for <span class="math notranslate nohighlight">\(\bar{X_i}\)</span> is the sample mean of each group i and <span class="math notranslate nohighlight">\(s_\bar{X_i}\)</span> is the standard deviation of each group i. The degrees of freedom is approximated by the following formula, the Welch–Satterthwaite equation:</p>
+<div class="math notranslate nohighlight">
+\[
+v \approx  (s_1^2/N_1 + s_2^2)^2/(s_1^4/N_1^2v_i+s_2^4/N_2^2v_2)
+\]</div>
+<p>The results show that in general the results are significant at both 10mm and 25mm intervals, with only 2 of the 10mm intervals not meeting the criteria.</p>
+<figure class="align-default" id="welch-s-t-test">
+<a class="reference internal image-reference" href="_images/Selection_048.png"><img alt="_images/Selection_048.png" src="_images/Selection_048.png" style="height: 450px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Significance table for the tested intervals compared to the baseline.</span><a class="headerlink" href="#welch-s-t-test" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>

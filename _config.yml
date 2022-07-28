@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Plotting the effects of varying irrigation dates and depths using Aquacrop OSPY 
+title: Using Aquacrop-OSPY to identfy the effect of varying irrigation quantities and timing on crop yield.
 author: Gabrial Erismann
 logo: figures/logo.png
 
